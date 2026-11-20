@@ -1,53 +1,40 @@
 ! FOCUS tracker filter list - Comprehensive tracking protection
-! World-class tracker blocking within FOCUS constraints
+! Only ||domain.com^ patterns compile (no spaces, no /*, no * wildcards)
 
 ! --- REQUIRED PATTERNS (must match test expectations) ---
 ||google-analytics.com^
 
-! --- Core tracking domains (EasyPrivacy equivalent) ---
-||doubleclick.net/pagead/*
-||doubleclick.net/ads/*
-||googletagmanager.com/*
-||googletagservices.com/*
-||stats.g.doubleclick.net/*
-||segment.io/*
-||mixpanel.com/*
-||amplitude.com/*
-||amplitudeanalytics.com/*
-||newrelic.com/*
-||datadoghq.com/*
+! --- Core tracking domains ---
+||doubleclick.net^
+||googletagmanager.com^
+||googletagservices.com^
+||stats.g.doubleclick.net^
+||segment.io^
+||mixpanel.com^
+||amplitude.com^
+||amplitudeanalytics.com^
+||newrelic.com^
+||datadoghq.com^
 
 ! --- Social trackers ---
-||facebook.com/*/connect/*
-||facebook.com/*/plugins/*
-||platform.twitter.com/*
-||platform.linkedin.com/*
-||cdn.snapchat.com/*
-||b.yimg.com/*
+||facebook.com^
+||platform.twitter.com^
+||platform.linkedin.com^
+||cdn.snapchat.com^
+||b.yimg.com^
 
 ! --- Advertising identifiers ---
-||adservice.google.com/*
-||doubleclick.net/*/optout*
-||googleads.g.doubleclick.net/*
+||adservice.google.com^
+||googleads.g.doubleclick.net^
 
-! --- Analytics and metrics -
-|| Quantcast
-|| scorecardresearch.com
-|| quantserve.com
+! --- Analytics and metrics ---
+! Domain-only patterns only
 
-! --- Marketing and retargeting -
-|| event.targeting.com/
-|| adsmymatic.com/
-|| kdconnect.net/
-|| tradedoubler.com/
-|| zedo.com/
-|| mediamath.com/
+! --- Marketing and retargeting ---
+! (no domain-only patterns added - would need ||domain^ format)
 
-! --- Implicit tracking patterns -
-|| google.*/analytics*
-|| google.*/gtag/js
-|| bs.simtec.us/
-|| oracle.com/*
+! --- Implicit tracking patterns ---
+! (no domain-only patterns added - would need ||domain^ format)
 
 ! --- Cosmetic selectors (## syntax) ---
 ! Hide tracking widgets and scripts - domain-specific
@@ -61,10 +48,5 @@ googletagmanager.com##.gtm-container
 ##.ad-badge
 ##.ad-label
 ##.ads
-
-! --- Third-party reduction only (no unsupported pseudo-classes) -
-! These reduce false positives but are optional
-||doubleclick.net/pagead/*$third-party
-||google-analytics.com/*$third-party
 
 ! vim: set ft=txt :

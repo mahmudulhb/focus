@@ -30,7 +30,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||doubleclick.net/pagead/*",
+      "urlFilter": "||doubleclick.net^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -54,7 +54,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||doubleclick.net/ads/*",
+      "urlFilter": "||googletagmanager.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -78,7 +78,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||googletagmanager.com/*",
+      "urlFilter": "||googletagservices.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -102,7 +102,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||googletagservices.com/*",
+      "urlFilter": "||stats.g.doubleclick.net^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -126,7 +126,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||stats.g.doubleclick.net/*",
+      "urlFilter": "||segment.io^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -150,7 +150,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||segment.io/*",
+      "urlFilter": "||mixpanel.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -174,7 +174,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||mixpanel.com/*",
+      "urlFilter": "||amplitude.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -198,7 +198,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||amplitude.com/*",
+      "urlFilter": "||amplitudeanalytics.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -222,7 +222,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||amplitudeanalytics.com/*",
+      "urlFilter": "||newrelic.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -246,7 +246,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||newrelic.com/*",
+      "urlFilter": "||datadoghq.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -270,7 +270,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||datadoghq.com/*",
+      "urlFilter": "||facebook.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -294,7 +294,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||facebook.com/*/connect/*",
+      "urlFilter": "||platform.twitter.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -318,7 +318,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||facebook.com/*/plugins/*",
+      "urlFilter": "||platform.linkedin.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -342,7 +342,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||platform.twitter.com/*",
+      "urlFilter": "||cdn.snapchat.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -366,7 +366,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||platform.linkedin.com/*",
+      "urlFilter": "||b.yimg.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -390,7 +390,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||cdn.snapchat.com/*",
+      "urlFilter": "||adservice.google.com^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -414,7 +414,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||b.yimg.com/*",
+      "urlFilter": "||googleads.g.doubleclick.net^",
       "resourceTypes": [
         "sub_frame",
         "stylesheet",
@@ -429,128 +429,6 @@
         "websocket",
         "other"
       ]
-    }
-  },
-  {
-    "id": 19,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||adservice.google.com/*",
-      "resourceTypes": [
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 20,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||doubleclick.net/*/optout*",
-      "resourceTypes": [
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 21,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||googleads.g.doubleclick.net/*",
-      "resourceTypes": [
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 22,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||doubleclick.net/pagead/*",
-      "resourceTypes": [
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ],
-      "domainType": "thirdParty"
-    }
-  },
-  {
-    "id": 23,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||google-analytics.com/*",
-      "resourceTypes": [
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ],
-      "domainType": "thirdParty"
     }
   }
 ]

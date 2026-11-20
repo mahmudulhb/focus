@@ -1256,31 +1256,6 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||reelngo.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 52,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
       "urlFilter": "||vgaming.eu^",
       "resourceTypes": [
         "main_frame",
@@ -1300,7 +1275,7 @@
     }
   },
   {
-    "id": 53,
+    "id": 52,
     "priority": 100,
     "action": {
       "type": "block"

@@ -47,37 +47,34 @@
 ! --- Gambling ad networks ---
 ! (handled by ads.txt, not gambling list)
 
-! --- Lottery and instant win ||
+! --- Lottery and instant win ---
 ||camelot.com^
 ||lottoland.com^
 ||thelotter.com^
 
-! --- Online bingo ||
+! --- Online bingo ---
 ||bingo.com^
 ||skybingo.com^
 ||megabingo.com^
 
-! --- Poker rooms ||
-||pokerstars.com^ (already listed)
+! --- Poker rooms ---
 ||888poker.com^
-||partyPoker.com^ (already listed)
 
-! --- Casino review and info sites ||
+! --- Casino review and info sites ---
 ||casinoportal.com^
 ||askgamblers.com^
 ||casinoreviews.com^
 
-! --- Crypto gambling ||
+! --- Crypto gambling ---
 ||bitcoincasino.com^
 ||btc.games^
 
-! --- Horse racing and sports betting affiliates ||
+! --- Horse racing and sports betting affiliates ---
 ||attheraces.com^
 ||racingtips.com^
 ||betting-odds.com^
 
-! --- Casino game developers ||
-||reelngo.com^
+! --- Casino game developers ---
 ||vgaming.eu^
 ||amma.international^
 

@@ -4,8 +4,8 @@ globalThis.FOCUS_BUILD = {
   "generated": "2026-11-20",
   "rules": {
     "ads": 39,
-    "trackers": 23,
-    "gambling": 53
+    "trackers": 18,
+    "gambling": 52
   },
   "cosmetic": {
     "domains": 5,
