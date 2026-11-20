@@ -30,6 +30,14 @@ body {
   color: var(--text);
   font: 15px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  /* Long DNR rules, mailto addresses and package names must not scroll the page sideways. */
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 a {
@@ -93,6 +101,9 @@ nav.top-links {
 nav.top-links a {
   color: var(--muted);
   text-decoration: none;
+  /* Comfortable touch target on a phone, unchanged visually on desktop. */
+  display: inline-block;
+  padding: 5px 0;
 }
 
 nav.top-links a:hover,
@@ -102,7 +113,7 @@ nav.top-links a[aria-current="page"] {
 
 h1 {
   margin: 0 0 14px;
-  font-size: clamp(34px, 6vw, 46px);
+  font-size: clamp(29px, 7.5vw, 46px);
   line-height: 1.06;
   letter-spacing: -0.035em;
 }
@@ -324,6 +335,7 @@ footer a:hover {
 }
 
 .doc code {
+  overflow-wrap: anywhere;
   padding: 1px 5px;
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -616,5 +628,67 @@ footer a:hover {
 
   .wrap {
     padding: 20px 16px 48px;
+  }
+
+  /* Brand on its own line, links on the next: six items never fit beside it. */
+  header.top {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-bottom: 22px;
+  }
+
+  nav.top-links {
+    justify-content: flex-start;
+    gap: 16px;
+    row-gap: 2px;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(27px, 8vw, 36px);
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  .panel,
+  .product {
+    padding: 16px 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .faq details {
+    padding: 0 14px;
+  }
+
+  /* Filter rules: one column on anything phone-sized, no clipped domains. */
+  .rule-list {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .wrap {
+    padding: 16px 12px 40px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
