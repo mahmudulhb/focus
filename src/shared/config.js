@@ -59,16 +59,26 @@
     // ads everywhere, but the host itself stays reachable (unlike blocklist,
     // which replaces the whole page). Users add hosts the bundled lists miss.
     adDomains: [],
+    adDomainList: [],
     adlist: [],
     adList: [],
     adBlocklist: [],
     adBlockList: [],
     adBlockDomains: [],
+    adBlockedDomains: [],
     customAdDomains: [],
     adSources: [],
     adsList: [],
     blockedAdDomains: [],
     extraAds: [],
+    adDomainsToBlock: [],
+    customAds: [],
+    adFilter: [],
+    adFilters: [],
+    adBlockSites: [],
+    sitesToBlockAds: [],
+    blockedAds: [],
+    adSites: [],
   };
 
   const BYPASS_MINUTES = 5;

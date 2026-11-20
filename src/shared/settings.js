@@ -15,11 +15,13 @@
   // that use a different name still resolve to the same data.
   const AD_DOMAIN_KEYS = [
     'adDomains',
+    'adDomainList',
     'adlist',
     'adList',
     'adBlocklist',
     'adBlockList',
     'adBlockDomains',
+    'adBlockedDomains',
     'customAdDomains',
     'adSources',
     'adsList',
@@ -29,6 +31,10 @@
     'customAds',
     'adFilter',
     'adFilters',
+    'adBlockSites',
+    'sitesToBlockAds',
+    'blockedAds',
+    'adSites',
   ];
 
   /** Accepts a URL or a bare host and returns a lowercase hostname, or "". */
