@@ -35,6 +35,7 @@
     'sitesToBlockAds',
     'blockedAds',
     'adSites',
+    'elementHidingSelectors',
   ];
 
   /** Accepts a URL or a bare host and returns a lowercase hostname, or "". */
@@ -64,6 +65,18 @@
     if (!host || !Array.isArray(adDomains)) return false;
     return adDomains.some((domain) => host === domain || host.endsWith('.' + domain));
   }
+
+  function isBlockedSelector(hostname, selectors) {
+    const host = normalizeDomain(hostname);
+    if (!host || !Array.isArray(selectors)) return false;
+    return selectors.some((sel) => {
+      // Strip leading ## for element-hiding syntax compatibility
+      const pattern = sel.startsWith('##') ? sel.slice(2) : sel;
+      // Exact host match or suffix match
+      return host === pattern || host.endsWith('.' + pattern);
+    });
+  }
+
 
   function sanitize(raw) {
     const stored = raw && typeof raw === 'object' ? raw : {};
@@ -115,7 +128,9 @@
       blocklist,
       adDomains,
       // Keep every alias in sync so callers reading any name see the same data.
-      ...Object.fromEntries(AD_DOMAIN_KEYS.filter((k) => k !== 'adDomains').map((k) => [k, adDomains])),
+    ...Object.fromEntries(AD_DOMAIN_KEYS.filter((k) => k !== 'adDomains').map((k) => [k, adDomains])),
+    // Element-hiding selectors are stored under their own key; no alias merging needed.
+    elementHidingSelectors: Array.from(new Set(stored.elementHidingSelectors || [])),
     };
   }
 

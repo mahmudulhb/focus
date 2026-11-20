@@ -164,6 +164,29 @@
       </section>
 
       <section class="panel">
+        <h2>Element hiding</h2>
+        <p class="hint">
+          CSS selectors to hide specific page elements (uBOL-inspired ##selector syntax).
+          One selector per line. These are injected as static blocking rules; an
+          allowed site always wins over a hidden element.
+        </p>
+        <textarea
+          id="elementHiding"
+          rows="6"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="##.ad-class
+          ##.sidebar
+          ##[id="wrapper"]"
+          aria-label="Element hiding selectors"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="btn primary" id="save-element-hiding">Save element hiding</button>
+          <span class="status" id="element-hiding-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="panel">
         <h2>Today</h2>
         <div class="today">
           <div class="stat">

@@ -66,6 +66,7 @@ async function applyDynamicRules(settings) {
   const allowDomains = settings.enabled ? settings.allowlist : [];
   const blockDomains = settings.enabled ? settings.blocklist : [];
   const adDomains = settings.enabled ? settings.adDomains : [];
+  const elementSelectors = settings.enabled ? settings.elementHiding : [];
   const addRules = [];
 
   blockDomains.forEach((domain, index) => {
@@ -117,6 +118,22 @@ async function applyDynamicRules(settings) {
           'websocket',
           'other',
         ],
+      },
+    });
+  });
+
+  // Element-hiding selectors (##selector): inject as cosmetic rules
+  // that hide matching elements. Each gets its own rule ID starting at 40000.
+  elementSelectors.forEach((selector, index) => {
+    // Strip the leading ## for the rule condition
+    const cssSelector = selector.startsWith('##') ? selector.slice(2) : selector;
+    addRules.push({
+      id: 40000 + index + 1,
+      priority: USER_BLOCK_PRIORITY,
+      action: { type: 'css' },
+      condition: {
+        extensionPoint: 'css',
+        cssSelector: cssSelector,
       },
     });
   });

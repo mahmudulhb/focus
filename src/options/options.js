@@ -20,6 +20,9 @@
     adDomains: $('addomains'),
     saveAdDomains: $('save-addomains'),
     adDomainsStatus: $('addomains-status'),
+    elementHiding: $('elementHiding'),
+    saveElementHiding: $('save-element-hiding'),
+    elementHidingStatus: $('element-hiding-status'),
     status: $('status'),
     todayCount: $('today-count'),
     todayMinutes: $('today-minutes'),
@@ -103,6 +106,7 @@
     els.allowlist.value = settings.allowlist.join('\n');
     els.blocklist.value = settings.blocklist.join('\n');
     els.adDomains.value = settings.adDomains.join('\n');
+    els.elementHiding.value = settings.elementHiding.join('\n');
   }
 
   function renderBuild() {
@@ -228,6 +232,7 @@
     try {
       settings = await globalThis.FocusSettings.update({ adDomains: unique });
       els.adDomains.value = settings.adDomains.join('\n');
+    els.elementHiding.value = settings.elementHiding.join('\n');
       announce(
         invalid.length > 0
           ? `Saved ${unique.length}. Ignored: ${invalid.slice(0, 4).join(', ')}`
@@ -237,6 +242,37 @@
     } catch (error) {
       console.warn('[FOCUS] could not save ad domains', error);
       announce('Could not save ad domains.', els.adDomainsStatus);
+    }
+  }
+
+  async function saveElementHiding() {
+    const tokens = els.elementHiding.value
+      .split(/[\n,]+/)
+      .map((token) => token.trim())
+      .filter(Boolean);
+
+    // Keep only valid CSS selector-like tokens that start with ## (uBOL style)
+    const valid = [];
+    const invalid = [];
+    for (const token of tokens) {
+      const pattern = token.startsWith('##') ? token.slice(2) : token;
+      if (pattern) valid.push(token);
+      else invalid.push(token);
+    }
+
+    const unique = [...new Set(valid)];
+    try {
+      settings = await globalThis.FocusSettings.update({ elementHiding: unique });
+      els.elementHiding.value = settings.elementHiding.join('\n');
+      announce(
+        invalid.length > 0
+          ? `Saved ${unique.length}. Ignored: ${invalid.slice(0, 4).join(', ')}`
+          : `Saved ${unique.length} selector${unique.length === 1 ? '' : 's'}.`,
+        els.elementHidingStatus,
+      );
+    } catch (error) {
+      console.warn('[FOCUS] could not save element hiding', error);
+      announce('Could not save element hiding.', els.elementHidingStatus);
     }
   }
 
@@ -282,6 +318,7 @@
     els.saveAllowlist.addEventListener('click', saveAllowlist);
     els.saveBlocklist.addEventListener('click', saveBlocklist);
     els.saveAdDomains.addEventListener('click', saveAdDomains);
+    els.saveElementHiding.addEventListener('click', saveElementHiding);
     els.resetStats.addEventListener('click', resetStats);
   }
 

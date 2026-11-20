@@ -79,6 +79,8 @@
     sitesToBlockAds: [],
     blockedAds: [],
     adSites: [],
+    // Element-hiding selectors (##selector syntax, uBOL-inspired).
+    elementHidingSelectors: [],
   };
 
   const BYPASS_MINUTES = 5;
