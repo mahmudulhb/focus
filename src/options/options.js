@@ -103,10 +103,10 @@
     els.reelsEnabled.checked = settings.reels.consent && settings.reels.enabled;
     els.reelsConsent.hidden = settings.reels.consent;
     els.reelsConsentActions.hidden = settings.reels.consent;
-    els.allowlist.value = settings.allowlist.join('\n');
-    els.blocklist.value = settings.blocklist.join('\n');
-    els.adDomains.value = settings.adDomains.join('\n');
-    els.elementHiding.value = settings.elementHiding.join('\n');
+    els.allowlist.value = (settings.allowlist || []).join('\n');
+    els.blocklist.value = (settings.blocklist || []).join('\n');
+    els.adDomains.value = (settings.adDomains || []).join('\n');
+    els.elementHiding.value = (settings.elementHiding || []).join('\n');
   }
 
   function renderBuild() {
