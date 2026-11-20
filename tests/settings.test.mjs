@@ -113,6 +113,22 @@ test('an allowed site is exempt even when approved', () => {
   assert.equal(isReelsActive(allowed, 'youtube', 'www.youtube.com'), true);
 });
 
+test('blocklist is sanitized like the allowlist', () => {
+  const settings = sanitize({
+    blocklist: ['www.Tracker.com', 'bad domain', 'tracker.com'],
+  });
+  assert.deepEqual(settings.blocklist, ['tracker.com']);
+  assert.deepEqual(sanitize({}).blocklist, []);
+});
+
+test('isBlocked matches hosts and subdomains, not lookalikes', () => {
+  const { isBlocked } = globalThis.FocusSettings;
+  assert.equal(isBlocked('ads.example.com', ['example.com']), true);
+  assert.equal(isBlocked('example.com', ['example.com']), true);
+  assert.equal(isBlocked('notexample.com', ['example.com']), false);
+  assert.equal(isBlocked('example.com', []), false);
+});
+
 test('date keys are local calendar days', () => {
   assert.equal(globalThis.FocusStats.dateKey(new Date(2024, 0, 5, 23, 59)), '2024-01-05');
   assert.equal(globalThis.FocusStats.dateKey(new Date(2026, 10, 19, 0, 0)), '2026-11-19');

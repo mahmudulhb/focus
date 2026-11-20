@@ -54,6 +54,7 @@
       },
     },
     allowlist: [],
+    blocklist: [],
   };
 
   const BYPASS_MINUTES = 5;

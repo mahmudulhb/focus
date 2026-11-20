@@ -120,6 +120,28 @@
       </section>
 
       <section class="panel">
+        <h2>Blocked sites</h2>
+        <p class="hint">
+          One host per line. Subdomains are included. These hosts are blocked as whole
+          sites — every request to them, including the page itself. Use this for ad or
+          tracker domains the bundled lists miss, or for sites you want out of reach.
+          An allowed site always wins over a blocked one.
+        </p>
+        <textarea
+          id="blocklist"
+          rows="6"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="example.com"
+          aria-label="Blocked sites"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="btn primary" id="save-blocklist">Save blocked sites</button>
+          <span class="status" id="blocklist-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="panel">
         <h2>Today</h2>
         <div class="today">
           <div class="stat">

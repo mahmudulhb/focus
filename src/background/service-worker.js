@@ -26,7 +26,7 @@ function scheduleApply() {
 async function applyState() {
   const settings = await FocusSettings.get();
   await applyRulesets(settings);
-  await applyAllowRules(settings);
+  await applyDynamicRules(settings);
 }
 
 async function applyRulesets(settings) {
@@ -53,19 +53,55 @@ async function applyRulesets(settings) {
  * requests to it. Both are needed because a top-level navigation has no
  * meaningful initiator, and an ad request may point back at the paused host.
  */
-async function applyAllowRules(settings) {
-  const domains = settings.enabled ? settings.allowlist : [];
+const USER_BLOCK_PRIORITY = 500;
+
+/**
+ * Dynamic rules cover two user-controlled lists:
+ *  - the allowlist (allow rules, highest priority),
+ *  - the blocklist (block rules, below the allowlist so an allowed host wins).
+ * Both are rebuilt from scratch on every settings change so a removed entry
+ * cannot linger as a stale rule.
+ */
+async function applyDynamicRules(settings) {
+  const allowDomains = settings.enabled ? settings.allowlist : [];
+  const blockDomains = settings.enabled ? settings.blocklist : [];
   const addRules = [];
 
-  domains.forEach((domain, index) => {
+  blockDomains.forEach((domain, index) => {
     addRules.push({
-      id: index * 2 + 1,
+      id: 10000 + index + 1,
+      priority: USER_BLOCK_PRIORITY,
+      action: { type: 'block' },
+      condition: {
+        requestDomains: [domain],
+        resourceTypes: [
+          'main_frame',
+          'sub_frame',
+          'stylesheet',
+          'script',
+          'image',
+          'font',
+          'object',
+          'xmlhttprequest',
+          'ping',
+          'csp_report',
+          'media',
+          'websocket',
+          'other',
+        ],
+      },
+    });
+  });
+
+  allowDomains.forEach((domain, index) => {
+    addRules.push({
+      id: 20000 + index * 2 + 1,
       priority: USER_ALLOW_PRIORITY,
       action: { type: 'allow' },
       condition: { initiatorDomains: [domain] },
     });
     addRules.push({
-      id: index * 2 + 2,
+      id: 20000 + index * 2 + 2,
       priority: USER_ALLOW_PRIORITY,
       action: { type: 'allow' },
       condition: { requestDomains: [domain] },

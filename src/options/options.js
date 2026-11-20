@@ -14,6 +14,9 @@
     allowlist: $('allowlist'),
     saveAllowlist: $('save-allowlist'),
     allowlistStatus: $('allowlist-status'),
+    blocklist: $('blocklist'),
+    saveBlocklist: $('save-blocklist'),
+    blocklistStatus: $('blocklist-status'),
     status: $('status'),
     todayCount: $('today-count'),
     todayMinutes: $('today-minutes'),
@@ -95,6 +98,7 @@
     els.reelsConsent.hidden = settings.reels.consent;
     els.reelsConsentActions.hidden = settings.reels.consent;
     els.allowlist.value = settings.allowlist.join('\n');
+    els.blocklist.value = settings.blocklist.join('\n');
   }
 
   function renderBuild() {
@@ -172,6 +176,36 @@
     }
   }
 
+  async function saveBlocklist() {
+    const tokens = els.blocklist.value
+      .split(/[\n,]+/)
+      .map((token) => token.trim())
+      .filter(Boolean);
+
+    const valid = [];
+    const invalid = [];
+    for (const token of tokens) {
+      const domain = globalThis.FocusSettings.normalizeDomain(token);
+      if (domain) valid.push(domain);
+      else invalid.push(token);
+    }
+
+    const unique = [...new Set(valid)];
+    try {
+      settings = await globalThis.FocusSettings.update({ blocklist: unique });
+      els.blocklist.value = settings.blocklist.join('\n');
+      announce(
+        invalid.length > 0
+          ? `Saved ${unique.length}. Ignored: ${invalid.slice(0, 4).join(', ')}`
+          : `Saved ${unique.length} blocked site${unique.length === 1 ? '' : 's'}.`,
+        els.blocklistStatus,
+      );
+    } catch (error) {
+      console.warn('[FOCUS] could not save blocklist', error);
+      announce('Could not save blocked sites.', els.blocklistStatus);
+    }
+  }
+
   async function resetStats() {
     try {
       const response = await chrome.runtime.sendMessage({ type: 'focus:reset-today' });
@@ -212,6 +246,7 @@
     });
     els.reelsPermission.addEventListener('click', openReelsPermission);
     els.saveAllowlist.addEventListener('click', saveAllowlist);
+    els.saveBlocklist.addEventListener('click', saveBlocklist);
     els.resetStats.addEventListener('click', resetStats);
   }
 

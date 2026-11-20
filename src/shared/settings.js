@@ -27,6 +27,12 @@
     return allowlist.some((domain) => host === domain || host.endsWith('.' + domain));
   }
 
+  function isBlocked(hostname, blocklist) {
+    const host = normalizeDomain(hostname);
+    if (!host || !Array.isArray(blocklist)) return false;
+    return blocklist.some((domain) => host === domain || host.endsWith('.' + domain));
+  }
+
   function sanitize(raw) {
     const stored = raw && typeof raw === 'object' ? raw : {};
     const storedReels = stored.reels && typeof stored.reels === 'object' ? stored.reels : {};
@@ -42,6 +48,10 @@
 
     const allowlist = Array.isArray(stored.allowlist)
       ? Array.from(new Set(stored.allowlist.map(normalizeDomain).filter(Boolean)))
+      : [];
+
+    const blocklist = Array.isArray(stored.blocklist)
+      ? Array.from(new Set(stored.blocklist.map(normalizeDomain).filter(Boolean)))
       : [];
 
     return {
@@ -63,6 +73,7 @@
         platforms,
       },
       allowlist,
+      blocklist,
     };
   }
 
@@ -124,6 +135,7 @@
     sanitize,
     normalizeDomain,
     isAllowed,
+    isBlocked,
     isReelsActive,
   };
 })();
