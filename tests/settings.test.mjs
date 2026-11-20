@@ -129,6 +129,21 @@ test('isBlocked matches hosts and subdomains, not lookalikes', () => {
   assert.equal(isBlocked('example.com', []), false);
 });
 
+test('ad domains are sanitized and merged from aliases', () => {
+  const settings = sanitize({ adlist: ['Ads.Example.com', 'bad', 'ads.example.com'] });
+  assert.deepEqual(settings.adDomains, ['ads.example.com']);
+  assert.deepEqual(settings.adBlocklist, ['ads.example.com']);
+  assert.deepEqual(sanitize({}).adDomains, []);
+});
+
+test('isAdDomain matches hosts and subdomains', () => {
+  const { isAdDomain, isAdBlocked } = globalThis.FocusSettings;
+  assert.equal(isAdDomain('x.ads.example.com', ['ads.example.com']), true);
+  assert.equal(isAdBlocked('ads.example.com', ['ads.example.com']), true);
+  assert.equal(isAdDomain('notads.example.com', ['ads.example.com']), false);
+  assert.equal(isAdDomain('ads.example.com', []), false);
+});
+
 test('date keys are local calendar days', () => {
   assert.equal(globalThis.FocusStats.dateKey(new Date(2024, 0, 5, 23, 59)), '2024-01-05');
   assert.equal(globalThis.FocusStats.dateKey(new Date(2026, 10, 19, 0, 0)), '2026-11-19');

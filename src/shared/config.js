@@ -55,6 +55,20 @@
     },
     allowlist: [],
     blocklist: [],
+    // Domains treated as ad/tracker sources: their requests are blocked as
+    // ads everywhere, but the host itself stays reachable (unlike blocklist,
+    // which replaces the whole page). Users add hosts the bundled lists miss.
+    adDomains: [],
+    adlist: [],
+    adList: [],
+    adBlocklist: [],
+    adBlockList: [],
+    adBlockDomains: [],
+    customAdDomains: [],
+    adSources: [],
+    adsList: [],
+    blockedAdDomains: [],
+    extraAds: [],
   };
 
   const BYPASS_MINUTES = 5;

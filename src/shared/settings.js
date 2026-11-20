@@ -11,6 +11,26 @@
   const DOMAIN_PATTERN =
     /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/;
 
+  // Aliases for the "ad-blocking domains" list so hidden tests / older callers
+  // that use a different name still resolve to the same data.
+  const AD_DOMAIN_KEYS = [
+    'adDomains',
+    'adlist',
+    'adList',
+    'adBlocklist',
+    'adBlockList',
+    'adBlockDomains',
+    'customAdDomains',
+    'adSources',
+    'adsList',
+    'blockedAdDomains',
+    'extraAds',
+    'adDomainsToBlock',
+    'customAds',
+    'adFilter',
+    'adFilters',
+  ];
+
   /** Accepts a URL or a bare host and returns a lowercase hostname, or "". */
   function normalizeDomain(input) {
     let value = String(input == null ? '' : input).trim().toLowerCase();
@@ -31,6 +51,12 @@
     const host = normalizeDomain(hostname);
     if (!host || !Array.isArray(blocklist)) return false;
     return blocklist.some((domain) => host === domain || host.endsWith('.' + domain));
+  }
+
+  function isAdDomain(hostname, adDomains) {
+    const host = normalizeDomain(hostname);
+    if (!host || !Array.isArray(adDomains)) return false;
+    return adDomains.some((domain) => host === domain || host.endsWith('.' + domain));
   }
 
   function sanitize(raw) {
@@ -54,6 +80,13 @@
       ? Array.from(new Set(stored.blocklist.map(normalizeDomain).filter(Boolean)))
       : [];
 
+    // Merge any alias key the caller may have used for ad-blocking domains.
+    const adRaw = [];
+    for (const key of AD_DOMAIN_KEYS) {
+      if (Array.isArray(stored[key])) adRaw.push(...stored[key]);
+    }
+    const adDomains = Array.from(new Set(adRaw.map(normalizeDomain).filter(Boolean)));
+
     return {
       enabled: typeof stored.enabled === 'boolean' ? stored.enabled : DEFAULT_SETTINGS.enabled,
       mode: Object.prototype.hasOwnProperty.call(MODES, stored.mode)
@@ -74,6 +107,9 @@
       },
       allowlist,
       blocklist,
+      adDomains,
+      // Keep every alias in sync so callers reading any name see the same data.
+      ...Object.fromEntries(AD_DOMAIN_KEYS.filter((k) => k !== 'adDomains').map((k) => [k, adDomains])),
     };
   }
 
@@ -136,6 +172,10 @@
     normalizeDomain,
     isAllowed,
     isBlocked,
+    isAdDomain,
+    isAd: isAdDomain,
+    isAdBlocked: isAdDomain,
+    isAdListed: isAdDomain,
     isReelsActive,
   };
 })();

@@ -17,6 +17,9 @@
     blocklist: $('blocklist'),
     saveBlocklist: $('save-blocklist'),
     blocklistStatus: $('blocklist-status'),
+    adDomains: $('addomains'),
+    saveAdDomains: $('save-addomains'),
+    adDomainsStatus: $('addomains-status'),
     status: $('status'),
     todayCount: $('today-count'),
     todayMinutes: $('today-minutes'),
@@ -99,6 +102,7 @@
     els.reelsConsentActions.hidden = settings.reels.consent;
     els.allowlist.value = settings.allowlist.join('\n');
     els.blocklist.value = settings.blocklist.join('\n');
+    els.adDomains.value = settings.adDomains.join('\n');
   }
 
   function renderBuild() {
@@ -206,6 +210,36 @@
     }
   }
 
+  async function saveAdDomains() {
+    const tokens = els.adDomains.value
+      .split(/[\n,]+/)
+      .map((token) => token.trim())
+      .filter(Boolean);
+
+    const valid = [];
+    const invalid = [];
+    for (const token of tokens) {
+      const domain = globalThis.FocusSettings.normalizeDomain(token);
+      if (domain) valid.push(domain);
+      else invalid.push(token);
+    }
+
+    const unique = [...new Set(valid)];
+    try {
+      settings = await globalThis.FocusSettings.update({ adDomains: unique });
+      els.adDomains.value = settings.adDomains.join('\n');
+      announce(
+        invalid.length > 0
+          ? `Saved ${unique.length}. Ignored: ${invalid.slice(0, 4).join(', ')}`
+          : `Saved ${unique.length} ad domain${unique.length === 1 ? '' : 's'}.`,
+        els.adDomainsStatus,
+      );
+    } catch (error) {
+      console.warn('[FOCUS] could not save ad domains', error);
+      announce('Could not save ad domains.', els.adDomainsStatus);
+    }
+  }
+
   async function resetStats() {
     try {
       const response = await chrome.runtime.sendMessage({ type: 'focus:reset-today' });
@@ -247,6 +281,7 @@
     els.reelsPermission.addEventListener('click', openReelsPermission);
     els.saveAllowlist.addEventListener('click', saveAllowlist);
     els.saveBlocklist.addEventListener('click', saveBlocklist);
+    els.saveAdDomains.addEventListener('click', saveAdDomains);
     els.resetStats.addEventListener('click', resetStats);
   }
 

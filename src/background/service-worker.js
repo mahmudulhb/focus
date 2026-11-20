@@ -65,6 +65,7 @@ const USER_BLOCK_PRIORITY = 500;
 async function applyDynamicRules(settings) {
   const allowDomains = settings.enabled ? settings.allowlist : [];
   const blockDomains = settings.enabled ? settings.blocklist : [];
+  const adDomains = settings.enabled ? settings.adDomains : [];
   const addRules = [];
 
   blockDomains.forEach((domain, index) => {
@@ -76,6 +77,33 @@ async function applyDynamicRules(settings) {
         requestDomains: [domain],
         resourceTypes: [
           'main_frame',
+          'sub_frame',
+          'stylesheet',
+          'script',
+          'image',
+          'font',
+          'object',
+          'xmlhttprequest',
+          'ping',
+          'csp_report',
+          'media',
+          'websocket',
+          'other',
+        ],
+      },
+    });
+  });
+
+  // Ad/tracker domains supplied by the user: block their requests as ads
+  // everywhere, but keep the host itself reachable (no main_frame block).
+  adDomains.forEach((domain, index) => {
+    addRules.push({
+      id: 30000 + index + 1,
+      priority: USER_BLOCK_PRIORITY,
+      action: { type: 'block' },
+      condition: {
+        requestDomains: [domain],
+        resourceTypes: [
           'sub_frame',
           'stylesheet',
           'script',

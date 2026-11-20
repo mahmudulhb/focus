@@ -142,6 +142,28 @@
       </section>
 
       <section class="panel">
+        <h2>Ad domains</h2>
+        <p class="hint">
+          One host per line. Subdomains are included. These hosts are treated as ad or
+          tracker sources: their requests are blocked everywhere (scripts, images,
+          frames, XHR and so on), but the site itself stays reachable. Use this for ad
+          or tracker domains the bundled lists miss. An allowed site always wins.
+        </p>
+        <textarea
+          id="addomains"
+          rows="6"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="ads.example.com"
+          aria-label="Ad domains"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="btn primary" id="save-addomains">Save ad domains</button>
+          <span class="status" id="addomains-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="panel">
         <h2>Today</h2>
         <div class="today">
           <div class="stat">
