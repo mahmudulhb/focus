@@ -62,14 +62,26 @@ for (const list of LISTS) {
   if (result.rules.length === 0) {
     throw new Error(`${list.file} produced no DNR rules`);
   }
-  write(`rules/${list.id}.json`, json(result.rules));
-  ruleCounts[list.id] = result.rules.length;
+  let rules = result.rules;
+  // Gambling ruleset is the deliberate exception: blocks whole sites including top-level navigation
+  // by adding main_frame to resourceTypes. All other rulesets intentionally exclude main_frame.
+  if (list.id === 'gambling') {
+    rules = rules.map((rule) => ({
+      ...rule,
+      condition: {
+        ...rule.condition,
+        resourceTypes: ['main_frame', ...(rule.condition.resourceTypes || [])],
+      },
+    }));
+  }
+  write(`rules/${list.id}.json`, json(rules));
+  ruleCounts[list.id] = rules.length;
   mergeSelectors(specific, result.cosmetics.specific);
   mergeSelectors(exceptions, result.cosmetics.exceptions);
   for (const selector of result.cosmetics.generic) generic.add(selector);
   allSkipped.push(...result.skipped);
   console.log(
-    `${list.id}: ${result.rules.length} rules, ` +
+    `${list.id}: ${rules.length} rules, ` +
       `${result.merged} duplicates merged, ${result.skipped.length} skipped`,
   );
 }

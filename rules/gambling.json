@@ -6,7 +6,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||1win.com^",
+      "urlFilter": "||bet365.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -31,7 +31,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||1xbet.com^",
+      "urlFilter": "||betway.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -56,7 +56,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||22bet.com^",
+      "urlFilter": "||draftkings.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -81,7 +81,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||4rabet.com^",
+      "urlFilter": "||pokerstars.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -106,7 +106,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bet-at-home.com^",
+      "urlFilter": "||stake.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -131,7 +131,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bet365.com^",
+      "urlFilter": "||1xbet.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -156,7 +156,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betano.com^",
+      "urlFilter": "||bwin.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -181,7 +181,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betdaq.com^",
+      "urlFilter": "||ladbrokes.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -206,7 +206,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betfair.com^",
+      "urlFilter": "||williamhill.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -231,7 +231,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betfred.com^",
+      "urlFilter": "||casino.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -256,7 +256,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betmgm.com^",
+      "urlFilter": "||888.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -281,7 +281,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betonline.ag^",
+      "urlFilter": "||partypoker.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -306,7 +306,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betrivers.com^",
+      "urlFilter": "||partypoker.eu^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -331,7 +331,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betsson.com^",
+      "urlFilter": "||pokerstars.eu^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -356,7 +356,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betus.com^",
+      "urlFilter": "||gvc.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -381,7 +381,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betvictor.com^",
+      "urlFilter": "||888holdings.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -406,7 +406,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betvisa.com^",
+      "urlFilter": "||caesars.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -431,7 +431,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betway.com^",
+      "urlFilter": "||mgmresorts.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -456,7 +456,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||betwinner.com^",
+      "urlFilter": "||wynnresorts.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -481,7 +481,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bovada.lv^",
+      "urlFilter": "||mandalaybay.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -506,7 +506,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||boylesports.com^",
+      "urlFilter": "||luxor.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -531,7 +531,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bwin.com^",
+      "urlFilter": "||aria.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -556,7 +556,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||coolbet.com^",
+      "urlFilter": "||bellagio.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -581,7 +581,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||coral.co.uk^",
+      "urlFilter": "||excalibur.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -606,7 +606,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||draftkings.com^",
+      "urlFilter": "||netent.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -631,7 +631,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||fanduel.com^",
+      "urlFilter": "||microgaming.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -656,7 +656,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||interwetten.com^",
+      "urlFilter": "||playtech.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -681,7 +681,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||ladbrokes.com^",
+      "urlFilter": "||rtggames.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -706,7 +706,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||marathonbet.com^",
+      "urlFilter": "||visionaryiGaming.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -731,7 +731,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||matchbook.com^",
+      "urlFilter": "||evolutiongaming.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -756,7 +756,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||melbet.com^",
+      "urlFilter": "||quickfire.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -781,7 +781,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||mostbet.com^",
+      "urlFilter": "||betfair.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -806,7 +806,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||mybookie.ag^",
+      "urlFilter": "||smarkets.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -831,7 +831,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||netbet.com^",
+      "urlFilter": "||matchbook.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -856,7 +856,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||nordicbet.com^",
+      "urlFilter": "||betdaq.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -881,7 +881,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||novibet.com^",
+      "urlFilter": "||camelot.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -906,7 +906,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||paddypower.com^",
+      "urlFilter": "||lottoland.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -931,7 +931,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||parimatch.com^",
+      "urlFilter": "||thelotter.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -956,7 +956,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||pointsbet.com^",
+      "urlFilter": "||bingo.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -981,7 +981,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||smarkets.com^",
+      "urlFilter": "||skybingo.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1006,7 +1006,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||skybet.com^",
+      "urlFilter": "||megabingo.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1031,7 +1031,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||tipico.com^",
+      "urlFilter": "||888poker.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1056,7 +1056,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||unibet.com^",
+      "urlFilter": "||casinoportal.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1081,7 +1081,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||williamhill.com^",
+      "urlFilter": "||askgamblers.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1106,7 +1106,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||wynnbet.com^",
+      "urlFilter": "||casinoreviews.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1131,7 +1131,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||888casino.com^",
+      "urlFilter": "||bitcoincasino.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1156,7 +1156,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||888sport.com^",
+      "urlFilter": "||btc.games^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1181,7 +1181,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bc.game^",
+      "urlFilter": "||attheraces.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1206,7 +1206,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||bitstarz.com^",
+      "urlFilter": "||racingtips.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1231,7 +1231,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||casino.com^",
+      "urlFilter": "||betting-odds.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1256,7 +1256,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||casumo.com^",
+      "urlFilter": "||reelngo.com^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1281,7 +1281,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||duelbits.com^",
+      "urlFilter": "||vgaming.eu^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",
@@ -1306,257 +1306,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "||grosvenorcasinos.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 54,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||jackpotcity.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 55,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||leovegas.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 56,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||mrgreen.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 57,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||partypoker.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 58,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||pokerstars.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 59,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||roobet.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 60,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||rollbit.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 61,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||royalpanda.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 62,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||spinpalace.com^",
-      "resourceTypes": [
-        "main_frame",
-        "sub_frame",
-        "stylesheet",
-        "script",
-        "image",
-        "font",
-        "object",
-        "xmlhttprequest",
-        "ping",
-        "csp_report",
-        "media",
-        "websocket",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 63,
-    "priority": 100,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "||stake.com^",
+      "urlFilter": "||amma.international^",
       "resourceTypes": [
         "main_frame",
         "sub_frame",

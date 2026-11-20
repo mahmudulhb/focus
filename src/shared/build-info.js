@@ -3,13 +3,13 @@ globalThis.FOCUS_BUILD = {
   "version": "0.4.0",
   "generated": "2026-11-20",
   "rules": {
-    "ads": 135,
-    "trackers": 62,
-    "gambling": 63
+    "ads": 39,
+    "trackers": 23,
+    "gambling": 53
   },
   "cosmetic": {
-    "domains": 10,
-    "specificSelectors": 47,
-    "genericSelectors": 10
+    "domains": 5,
+    "specificSelectors": 7,
+    "genericSelectors": 5
   }
 };

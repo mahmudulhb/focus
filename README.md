@@ -30,6 +30,7 @@ cloud, and no analytics.
 | Declarative filtering: modes, static rulesets, allowlist | **Implemented** |
 | User-defined blocked sites (whole-site blocks for any host) | **Implemented** |
 | User-defined ad/tracker domains (blocked as ads, site stays reachable) | **Implemented** |
+| Element hiding (##selector selectors, uBOL-inspired) | **Implemented** |
 | Betting-site blocking (own ruleset, on by default, own switch) | **Implemented (63 sites)** |
 | Reels detection, entry-point hiding, interstitial, five-minute pass | **Implemented** |
 | Reels permission gate (nothing runs before approval) | **Implemented** |

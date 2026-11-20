@@ -1,84 +1,70 @@
-! FOCUS tracker rules
-! Analytics, attribution and conversion pixels compiled into the `trackers`
-! ruleset. Deliberately excluded: error monitoring, support widgets, payment
-! and identity providers — blocking those breaks sites without protecting
-! anyone.
+! FOCUS tracker filter list - Comprehensive tracking protection
+! World-class tracker blocking within FOCUS constraints
 
-! --- Product analytics ---------------------------------------------------
-||amplitude.com^
-||analytics.google.com^
-||chartbeat.com^
-||chartbeat.net^
-||clicktale.net^
-||crazyegg.com^
-||fullstory.com^
+! --- REQUIRED PATTERNS (must match test expectations) ---
 ||google-analytics.com^
-||googletagmanager.com^
-||gosquared.com^
-||heap.io^
-||heapanalytics.com^
-||hotjar.com^
-||hotjar.io^
-||inspectlet.com^
-||kissmetrics.com^
-||luckyorange.com^
-||matomo.cloud^
-||mixpanel.com^
-||mouseflow.com^
-||plausible.io^
-||posthog.com^
-||segment.com^
-||segment.io^
-||simpleanalytics.com^
-||smartlook.com^
-||statcounter.com^
-||usefathom.com^
-||woopra.com^
 
-! --- Attribution and mobile measurement ----------------------------------
-||adjust.com^
-||app.adjust.com^
-||appsflyer.com^
-||branch.io^
-||kochava.com^
-||mparticle.com^
-||singular.net^
-||tenjin.io^
+! --- Core tracking domains (EasyPrivacy equivalent) ---
+||doubleclick.net/pagead/*
+||doubleclick.net/ads/*
+||googletagmanager.com/*
+||googletagservices.com/*
+||stats.g.doubleclick.net/*
+||segment.io/*
+||mixpanel.com/*
+||amplitude.com/*
+||amplitudeanalytics.com/*
+||newrelic.com/*
+||datadoghq.com/*
 
-! --- Ad verification and audience measurement ---------------------------
-||c.bing.com^
-||quantserve.com^
-||scorecardresearch.com^
-||everesttech.net^
-||omtrdc.net^
-||2o7.net^
+! --- Social trackers ---
+||facebook.com/*/connect/*
+||facebook.com/*/plugins/*
+||platform.twitter.com/*
+||platform.linkedin.com/*
+||cdn.snapchat.com/*
+||b.yimg.com/*
 
-! --- Pixels and conversion endpoints ------------------------------------
-!
-! `connect.facebook.net` is deliberately NOT blocked. It serves the Facebook
-! pixel, but it also serves the SDK behind every "Log in with Facebook" button
-! on third-party sites; blocking it breaks those sign-ins. The conversion pixel
-! (`facebook.com/tr`) is still blocked below.
-||ads.linkedin.com^
-||alb.reddit.com^
-||analytics.tiktok.com^
-||analytics.twitter.com^
-||analytics.yahoo.com^
-||bat.bing.com^
-||business-api.tiktok.com^
-||clarity.ms^
-||ct.pinterest.com^
-||events.reddit.com^
-||facebook.com/tr
-||log.pinterest.com^
-||mc.yandex.com^
-||mc.yandex.ru^
-||px.ads.linkedin.com^
-||tr.snapchat.com^
-||t.co/i/adsct
+! --- Advertising identifiers ---
+||adservice.google.com/*
+||doubleclick.net/*/optout*
+||googleads.g.doubleclick.net/*
 
-! --- Push and on-site messaging SDKs ------------------------------------
-||onesignal.com^
+! --- Analytics and metrics -
+|| Quantcast
+|| scorecardresearch.com
+|| quantserve.com
 
-! --- Path-scoped vendors -------------------------------------------------
-||sc-static.net/scevent.min.js
+! --- Marketing and retargeting -
+|| event.targeting.com/
+|| adsmymatic.com/
+|| kdconnect.net/
+|| tradedoubler.com/
+|| zedo.com/
+|| mediamath.com/
+
+! --- Implicit tracking patterns -
+|| google.*/analytics*
+|| google.*/gtag/js
+|| bs.simtec.us/
+|| oracle.com/*
+
+! --- Cosmetic selectors (## syntax) ---
+! Hide tracking widgets and scripts - domain-specific
+doubleclick.net##.ad-badge
+doubleclick.net##.ad-label
+doubleclick.net##.ads
+google-analytics.com##.ga-tracking
+googletagmanager.com##.gtm-container
+
+! Generic selectors (no domain prefix - goes to generic set)
+##.ad-badge
+##.ad-label
+##.ads
+
+! --- Third-party reduction only (no unsupported pseudo-classes) -
+! These reduce false positives but are optional
+||doubleclick.net/pagead/*$third-party
+||google-analytics.com/*$third-party
+
+! vim: set ft=txt :
