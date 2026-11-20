@@ -63,10 +63,10 @@ const USER_BLOCK_PRIORITY = 500;
  * cannot linger as a stale rule.
  */
 async function applyDynamicRules(settings) {
-  const allowDomains = settings.enabled ? settings.allowlist : [];
-  const blockDomains = settings.enabled ? settings.blocklist : [];
-  const adDomains = settings.enabled ? settings.adDomains : [];
-  const elementSelectors = settings.enabled ? settings.elementHiding : [];
+  const allowDomains = settings.enabled ? (settings.allowlist || []) : [];
+  const blockDomains = settings.enabled ? (settings.blocklist || []) : [];
+  const adDomains = settings.enabled ? (settings.adDomains || []) : [];
+  const elementSelectors = settings.enabled ? (settings.elementHiding || []) : [];
   const addRules = [];
 
   blockDomains.forEach((domain, index) => {
