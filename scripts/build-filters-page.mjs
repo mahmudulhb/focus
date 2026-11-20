@@ -227,11 +227,12 @@ ${bodies.join('\n\n')}
 
       <footer>
         <span>FOCUS · v0.4.0 extension</span>
-        <span>
-          <a href="privacy.html">Extension privacy</a> ·
-          <a href="privacy-android.html">App privacy</a> ·
+        <div class="foot-links">
+          <a href="privacy.html">Extension privacy</a>
+          <a href="privacy-android.html">App privacy</a>
+          <a href="faq.html">FAQ</a>
           <a href="mailto:bappy@mahmudulhb.me">Contact</a>
-        </span>
+        </div>
       </footer>
     </div>
   </body>

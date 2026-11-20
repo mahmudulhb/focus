@@ -9,7 +9,7 @@
       content="FOCUS for Chrome and other Chromium browsers: curated ad and tracker rules, opt-in reels blocking for five platforms, and a switchable betting-site blocklist."
     />
     <link rel="stylesheet" href="site.css" />
-    <link rel="icon" href="../public/icons/icon-48.png" />
+    <link rel="icon" href="icon-48.png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -145,15 +145,40 @@
           </ul>
         </div>
 
-        <h2>Install</h2>
-        <div class="panel">
-          <span class="pill">Chrome Web Store · in review</span>
-          <p>
-            The listing is not public yet. When it is approved, the install button will live on this
-            page and in the store. Until then the extension can be loaded unpacked from source by
-            developers — see the project README for the two commands.
-          </p>
+        <h2>Get FOCUS for your browser</h2>
+        <div class="get">
+          <article class="get-card">
+            <div class="head">
+              <h3>FOCUS for Chrome, Edge, Brave and other Chromium browsers</h3>
+              <span class="status">In review</span>
+            </div>
+            <p>
+              The Chrome Web Store listing is pending review. When it is approved, the install button
+              appears here and on the home page. Until then you can load it unpacked from source.
+            </p>
+            <div class="actions">
+              <a class="button sm" href="mailto:bappy@mahmudulhb.me?subject=Notify%20me%20when%20FOCUS%20for%20Chrome%20is%20live">
+                Notify me when it is live
+              </a>
+            </div>
+            <p class="fineprint" style="margin-top: 12px;">Load it unpacked today:</p>
+            <pre class="code-block"><span class="prompt">$</span> git clone https://github.com/mahmudulhb/focus
+<span class="prompt">$</span> cd focus && npm run build
+<span class="prompt">#</span> chrome://extensions → Developer mode → Load unpacked → select focus/dist</pre>
+          </article>
         </div>
+
+        <section id="contact" class="contact">
+          <div class="contact-card">
+            <p class="eyebrow">Contact</p>
+            <h2>Write to a person, not a form.</h2>
+            <p>
+              Questions about a rule in the filter list, a store-review reply, or anything that does
+              not fit a FAQ entry — email directly.
+            </p>
+            <a class="email" href="mailto:bappy@mahmudulhb.me">bappy@mahmudulhb.me</a>
+          </div>
+        </section>
 
         <p class="legal-note">
           <a href="privacy.html">Read the extension privacy policy</a>. Short version: no account,
@@ -163,10 +188,12 @@
 
       <footer>
         <span>FOCUS · v0.4.0 extension</span>
-        <span>
-          <a href="privacy.html">Extension privacy</a> ·
+        <div class="foot-links">
+          <a href="privacy.html">Extension privacy</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
           <a href="mailto:bappy@mahmudulhb.me">Contact</a>
-        </span>
+        </div>
       </footer>
     </div>
   </body>

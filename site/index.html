@@ -8,8 +8,15 @@
       name="description"
       content="FOCUS is a focus layer for the browser and for Android: blocks ads and trackers, shuts down reels feeds, and keeps betting sites out of reach. Local only — no account, no analytics."
     />
+    <meta name="theme-color" content="#0b0e09" />
+    <meta property="og:title" content="FOCUS — your attention, on purpose" />
+    <meta
+      property="og:description"
+      content="A focus layer for the browser and Android. Blocks ads, trackers and betting sites, shuts down reels feeds, keeps every decision on the device. No account, no analytics."
+    />
+    <meta property="og:type" content="website" />
     <link rel="stylesheet" href="site.css" />
-    <link rel="icon" href="../public/icons/icon-48.png" />
+    <link rel="icon" href="icon-48.png" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -43,32 +50,48 @@
       </header>
 
       <main id="main">
-        <p class="eyebrow">Focus layer</p>
-        <h1>Your attention,<br />on purpose.</h1>
-        <p class="lede">
-          The same idea in two places: remove the things designed to keep you scrolling, keep every
-          decision local, and never pretend a block is something it is not.
-        </p>
+        <section class="hero">
+          <p class="eyebrow">Focus layer · browser + Android</p>
+          <h1>Your attention,<br />on purpose.</h1>
+          <p class="lede">
+            FOCUS removes the things designed to keep you scrolling — ads and trackers, sponsored
+            feed posts, reels feeds, betting sites — and keeps every decision on the device you
+            already own. No account, no analytics, no server.
+          </p>
+
+          <div class="cta">
+            <a class="button" href="#get-it">Get FOCUS</a>
+            <a class="button ghost" href="extension.html">How it works</a>
+          </div>
+
+          <div class="trust" aria-label="What FOCUS is">
+            <span>Local only</span>
+            <span>No account</span>
+            <span>No analytics</span>
+            <span>Open filter lists</span>
+            <span>Asks before blocking reels</span>
+          </div>
+        </section>
 
         <div class="split">
           <section class="product" aria-labelledby="ext-title">
-            <span class="pill">Chrome · in review</span>
+            <span class="status">Chrome · in review</span>
             <h2 id="ext-title">Browser extension</h2>
             <p>
               Ads and trackers, sponsored feed posts, short-form reels, and betting sites — filtered
-              by rules your browser compiles and enforces.
+              by rules your browser compiles and enforces. No script watching your traffic.
             </p>
-            <a class="button" href="extension.html">How the extension works</a>
+            <a class="button ghost sm" href="extension.html">How the extension works</a>
           </section>
 
           <section class="product" aria-labelledby="android-title">
-            <span class="pill">Android · in preparation</span>
+            <span class="status">Android · in preparation</span>
             <h2 id="android-title">Android app</h2>
             <p>
               Timed focus sessions that cover a distracting app with a pause screen, plus Reels
-              Guard for the hours between sessions.
+              Guard for the hours between sessions. No internet permission at all.
             </p>
-            <a class="button" href="android.html">How the app works</a>
+            <a class="button ghost sm" href="android.html">How the app works</a>
           </section>
         </div>
 
@@ -95,6 +118,74 @@
           </ul>
         </div>
 
+        <h2 id="get-it">Get FOCUS</h2>
+        <p class="lede">
+          Neither store listing is public yet. The buttons below email you the moment each one goes
+          live — or you can build from source today.
+        </p>
+
+        <div class="get">
+          <article class="get-card">
+            <div class="head">
+              <h3>FOCUS for Chrome and other Chromium browsers</h3>
+              <span class="status">In review</span>
+            </div>
+            <p>
+              Chrome Web Store listing pending review. When it is approved, the install button
+              appears here and on the extension page.
+            </p>
+            <div class="actions">
+              <a class="button sm" href="mailto:bappy@mahmudulhb.me?subject=Notify%20me%20when%20FOCUS%20for%20Chrome%20is%20live">
+                Notify me when it is live
+              </a>
+              <a class="button ghost sm" href="extension.html">Read the details</a>
+            </div>
+            <p class="fineprint" style="margin-top: 12px;">
+              Developers can load it unpacked today:
+            </p>
+            <pre class="code-block"><span class="prompt">$</span> git clone https://github.com/mahmudulhb/focus
+<span class="prompt">$</span> cd focus && npm run build
+<span class="prompt">#</span> chrome://extensions → Developer mode → Load unpacked → select focus/dist</pre>
+          </article>
+
+          <article class="get-card">
+            <div class="head">
+              <h3>FOCUS for Android</h3>
+              <span class="status">In preparation</span>
+            </div>
+            <p>
+              The app is built and unit-tested, but it has not been published to Google Play and
+              there is no public download yet.
+            </p>
+            <div class="actions">
+              <a class="button sm" href="mailto:bappy@mahmudulhb.me?subject=Notify%20me%20when%20FOCUS%20for%20Android%20is%20live">
+                Notify me when it is live
+              </a>
+              <a class="button ghost sm" href="android.html">Read the details</a>
+            </div>
+            <p class="fineprint" style="margin-top: 12px;">
+              A signed release build and the install instructions will be published on the project's
+              GitHub releases page once the store listing is approved.
+            </p>
+          </article>
+        </div>
+
+        <section id="contact" class="contact">
+          <div class="contact-card">
+            <p class="eyebrow">Contact</p>
+            <h2>Write to a person, not a form.</h2>
+            <p>
+              Questions about a rule in the filter list, a store-review reply, or anything that does
+              not fit a FAQ entry — email directly. No ticket system, no autoresponder.
+            </p>
+            <a class="email" href="mailto:bappy@mahmudulhb.me">bappy@mahmudulhb.me</a>
+            <p class="fineprint" style="margin-top: 10px;">
+              Replies come from the same address. Please do not send bug reports with personal data
+              in them — FOCUS does not collect any, and I would rather not receive any.
+            </p>
+          </div>
+        </section>
+
         <p class="legal-note">
           FOCUS is an independent project. It is not affiliated with Instagram, Facebook, YouTube,
           TikTok, Snapchat or Google. Product names are used only to describe what the software
@@ -104,11 +195,13 @@
 
       <footer>
         <span>FOCUS · v0.4.0 extension · v1.0.0 app</span>
-        <span>
-          <a href="privacy.html">Extension privacy</a> ·
-          <a href="privacy-android.html">App privacy</a> ·
+        <div class="foot-links">
+          <a href="privacy.html">Extension privacy</a>
+          <a href="privacy-android.html">App privacy</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
           <a href="mailto:bappy@mahmudulhb.me">Contact</a>
-        </span>
+        </div>
       </footer>
     </div>
   </body>
