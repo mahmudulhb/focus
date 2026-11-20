@@ -1,15 +1,15 @@
 ! FOCUS ads filter list - Comprehensive ad blocking
-! World-class ad blocking within FOCUS constraints
+! Covers ad networks, analytics, video ads, social media ads, and streaming site ads
+! Only ||domain.com^ patterns compile (no $options, no /* wildcards)
 
-! --- REQUIRED PATTERNS (must match test expectations) ---
+! --- REQUIRED PATTERNS (must match test expectations) ||
 ||doubleclick.net^
 ||googlesyndication.com^
 ||google-analytics.com^
 ||google.com/ads$
 ||google.com/pagead$
-||doubleclick.net/pagead/$
-
-! --- Core ad networks (EasyList equivalent) ---
+||doubleclick.net/pagead$
+||doubleclick.net/ads$
 ||2o7.net/
 ||quantserve.com/
 ||scorecardresearch.com/
@@ -20,59 +20,99 @@
 ||zedo.com/
 ||mediamath.com/
 ||doubleclick.net/prebid/
-
-! --- Video ad platforms ---
 ||vastlimits.com/
 ||outstream.video/
 ||player.oath.com/
-||adsrvr.org/
-||adform.net/
-||adroll.com/
-||adsymptotic.com/
-||kdconnect.net/
+||adsrvr.org!
 
-! --- Social media ads ---
-||facebook.com/ads/*
-||twitter.com/ads/*
-||snapchat.com/ads/*
-||instagram.com/ads/*
-||linkedin.com/ads/*
+! --- Video ad networks (streaming sites) ||
+||pubads.g.doubleclick.net^
+||video.adserving.systems/
+||videoad.net^
+||adnimation.com/
+||adhigh.com/
+||admeld.com/
+||admob.com^
+||adsense.google.com^
+||googleads.g.doubleclick.net^
 
-! --- Search engine ads -
-||googlesyndication.com/ads/*
-||googleadservices.com/*
-||pagead2.googlesyndication.com/*
+! --- Social media ad plugins ||
+||connect.facebook.net$
+||platform.twitter.com$
+||platform.linkedin.com$
+||cdn.snapchat.com$
 
-! --- E-commerce ads -
-||amazon-adsystem.com/
-||pubads.g.doubleclick.net/
-||aax-us.amazon-adsystem.com/
-||aax-eu.amazon-adsystem.com/
+! --- Recommendation widgets (often have "sponsored" content) ||
+||outbrain.com^
+||taboola.com^
+||widgetry.com/
+||revcontent.com/
 
-! --- Cosmetic selectors (## syntax) ---
-! Domain-specific
-doubleclick.net##.ads
-doubleclick.net##.ad-badge
-doubleclick.net##.ad-label
-google-analytics.com##.ga-tracking
-googletagmanager.com##.gtm-container
-pagead2.googlesyndication.com##.ad-unit
-googleadservices.com##.ad-badge
+! --- Pop-under and redirect ads ||
+||funderwear.com/
+||adjuggler.com/
+||leadbolt.com/
+||appnextlevel.com/
 
-! Generic selectors (no domain prefix)
+! --- Adult and spam ad networks ||
+||exo.click/
+||mysterium.io/
+||profunix.com/
+
+! --- Expanded video ad patterns for streaming sites ||
+! These block paths commonly used by streaming sites
+||doubleclick.net/pagead*
+||googlesyndication.com/ads*
+||googleads.g.doubleclick.net/*
+
+! --- Analytics blocking for streaming sites ||
+||googletagmanager.com*
+||doubleclick.net*
+
+! --- CSS cosmetic selectors to hide ad slots ---
+! These hide ad containers even if network requests pass
+! Syntax: ##selector (uBOL-inspired, safe CSS-only selectors)
+
+! Generic selectors (no domain prefix - goes to generic set)
 ##.ad-badge
 ##.ad-label
 ##.ads
-##[id^="div-gpt-ad"]
-##[id^="google_ads"]
+##.advertisement
+##.video-ads
+##.preroll
+##.midroll
+##.postroll
 
-! --- Third-party only (reduces false positives) ---
-||doubleclick.net/pagead/*$third-party
-||google-analytics.com/*$third-party
-||googletagmanager.com/*$third-party
+! Domain-specific selectors for known ad patterns
+doubleclick.net##.ad-badge
+doubleclick.net##.ad-label
+doubleclick.net##.ads
+googlesyndication.com##.ads
+google-analytics.com##.ga-tracking
+googletagmanager.com##.gtm-container
 
-! --- Domains to explicitly allow (whitelist)
-! These are NOT blocked - safe sites
-!||example.com^$document,important
+! --- Video player ad overlay patterns for streaming ||
+##.ad-badge
+##.ad-label
+##.ads
+
+! --- Expanded cosmetic patterns for streaming sites ||
+##[aria-label="Advertisement"]
+##[data-ad-client]
+##[data-ad-slot]
+##[data-ad-unit]
+
+! --- Fallback: block common streaming ad servers ||
+! These are domain-only patterns
+||-safe.tiqcdn.com$
+||-e-100-metrics.adscape.com$
+||-top-findly.com$
+||-doubleverify.com$
+
+! --- Block third-party ads only (no main_frame) ||
+! These reduce false positives but are optional
+||doubleclick.net/pagead$ third-party
+||googlesyndication.com$ third-party
+||googleads.g.doubleclick.net$ third-party
 
 ! vim: set ft=txt :

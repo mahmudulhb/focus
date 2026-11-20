@@ -53,8 +53,8 @@
         <div class="cards">
           <article class="card">
             <span class="tag">Ads</span>
-            <h3>39 network rules</h3>
-            <p>Plus 12 cosmetic selectors that hide ad slots the network rules cannot reach.</p>
+            <h3>57 network rules</h3>
+            <p>Plus 21 cosmetic selectors that hide ad slots the network rules cannot reach.</p>
           </article>
           <article class="card">
             <span class="tag">Trackers</span>
@@ -81,23 +81,19 @@
           </p>
         </div>
 
-        <h2 id="ads">Ads <span class="count">39 network rules · 12 cosmetic selectors</span></h2>
+        <h2 id="ads">Ads <span class="count">57 network rules · 21 cosmetic selectors</span></h2>
         <p>Ad servers, exchanges, supply-side platforms and ad paths. Compiles to declarative rules the browser enforces.</p>
         <div class="rules">
         <section class="rule-group">
-          <h3>REQUIRED PATTERNS (must match test expectations)</h3>
+          <h3>REQUIRED PATTERNS (must match test expectations) ||</h3>
           <ul class="rule-list">
             <li><code>||doubleclick.net^</code></li>
             <li><code>||googlesyndication.com^</code></li>
             <li><code>||google-analytics.com^</code></li>
             <li><code>||google.com/ads$</code></li>
             <li><code>||google.com/pagead$</code></li>
-            <li><code>||doubleclick.net/pagead/$</code></li>
-          </ul>
-        </section>
-        <section class="rule-group">
-          <h3>Core ad networks (EasyList equivalent)</h3>
-          <ul class="rule-list">
+            <li><code>||doubleclick.net/pagead$</code></li>
+            <li><code>||doubleclick.net/ads$</code></li>
             <li><code>||2o7.net/</code></li>
             <li><code>||quantserve.com/</code></li>
             <li><code>||scorecardresearch.com/</code></li>
@@ -108,71 +104,127 @@
             <li><code>||zedo.com/</code></li>
             <li><code>||mediamath.com/</code></li>
             <li><code>||doubleclick.net/prebid/</code></li>
-          </ul>
-        </section>
-        <section class="rule-group">
-          <h3>Video ad platforms</h3>
-          <ul class="rule-list">
             <li><code>||vastlimits.com/</code></li>
             <li><code>||outstream.video/</code></li>
             <li><code>||player.oath.com/</code></li>
-            <li><code>||adsrvr.org/</code></li>
-            <li><code>||adform.net/</code></li>
-            <li><code>||adroll.com/</code></li>
-            <li><code>||adsymptotic.com/</code></li>
-            <li><code>||kdconnect.net/</code></li>
+            <li><code>||adsrvr.org!</code></li>
           </ul>
         </section>
         <section class="rule-group">
-          <h3>Social media ads</h3>
+          <h3>Video ad networks (streaming sites) ||</h3>
           <ul class="rule-list">
-            <li><code>||facebook.com/ads/*</code></li>
-            <li><code>||twitter.com/ads/*</code></li>
-            <li><code>||snapchat.com/ads/*</code></li>
-            <li><code>||instagram.com/ads/*</code></li>
-            <li><code>||linkedin.com/ads/*</code></li>
+            <li><code>||pubads.g.doubleclick.net^</code></li>
+            <li><code>||video.adserving.systems/</code></li>
+            <li><code>||videoad.net^</code></li>
+            <li><code>||adnimation.com/</code></li>
+            <li><code>||adhigh.com/</code></li>
+            <li><code>||admeld.com/</code></li>
+            <li><code>||admob.com^</code></li>
+            <li><code>||adsense.google.com^</code></li>
+            <li><code>||googleads.g.doubleclick.net^</code></li>
           </ul>
         </section>
         <section class="rule-group">
-          <h3>Search engine ads</h3>
+          <h3>Social media ad plugins ||</h3>
           <ul class="rule-list">
-            <li><code>||googlesyndication.com/ads/*</code></li>
-            <li><code>||googleadservices.com/*</code></li>
-            <li><code>||pagead2.googlesyndication.com/*</code></li>
+            <li><code>||connect.facebook.net$</code></li>
+            <li><code>||platform.twitter.com$</code></li>
+            <li><code>||platform.linkedin.com$</code></li>
+            <li><code>||cdn.snapchat.com$</code></li>
           </ul>
         </section>
         <section class="rule-group">
-          <h3>E-commerce ads</h3>
+          <h3>Recommendation widgets (often have &quot;sponsored&quot; content) ||</h3>
           <ul class="rule-list">
-            <li><code>||amazon-adsystem.com/</code></li>
-            <li><code>||pubads.g.doubleclick.net/</code></li>
-            <li><code>||aax-us.amazon-adsystem.com/</code></li>
-            <li><code>||aax-eu.amazon-adsystem.com/</code></li>
+            <li><code>||outbrain.com^</code></li>
+            <li><code>||taboola.com^</code></li>
+            <li><code>||widgetry.com/</code></li>
+            <li><code>||revcontent.com/</code></li>
           </ul>
         </section>
         <section class="rule-group">
-          <h3>Cosmetic selectors (## syntax)</h3>
+          <h3>Pop-under and redirect ads ||</h3>
           <ul class="rule-list">
-            <li><code>doubleclick.net##.ads</code></li>
-            <li><code>doubleclick.net##.ad-badge</code></li>
-            <li><code>doubleclick.net##.ad-label</code></li>
-            <li><code>google-analytics.com##.ga-tracking</code></li>
-            <li><code>googletagmanager.com##.gtm-container</code></li>
-            <li><code>pagead2.googlesyndication.com##.ad-unit</code></li>
-            <li><code>googleadservices.com##.ad-badge</code></li>
+            <li><code>||funderwear.com/</code></li>
+            <li><code>||adjuggler.com/</code></li>
+            <li><code>||leadbolt.com/</code></li>
+            <li><code>||appnextlevel.com/</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Adult and spam ad networks ||</h3>
+          <ul class="rule-list">
+            <li><code>||exo.click/</code></li>
+            <li><code>||mysterium.io/</code></li>
+            <li><code>||profunix.com/</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Expanded video ad patterns for streaming sites ||</h3>
+          <ul class="rule-list">
+            <li><code>||doubleclick.net/pagead*</code></li>
+            <li><code>||googlesyndication.com/ads*</code></li>
+            <li><code>||googleads.g.doubleclick.net/*</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Analytics blocking for streaming sites ||</h3>
+          <ul class="rule-list">
+            <li><code>||googletagmanager.com*</code></li>
+            <li><code>||doubleclick.net*</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>CSS cosmetic selectors to hide ad slots</h3>
+          <ul class="rule-list">
             <li><code>##.ad-badge</code></li>
             <li><code>##.ad-label</code></li>
             <li><code>##.ads</code></li>
-            <li><code>##[id^=&quot;div-gpt-ad&quot;]</code></li>
-            <li><code>##[id^=&quot;google_ads&quot;]</code></li>
+            <li><code>##.advertisement</code></li>
+            <li><code>##.video-ads</code></li>
+            <li><code>##.preroll</code></li>
+            <li><code>##.midroll</code></li>
+            <li><code>##.postroll</code></li>
+            <li><code>doubleclick.net##.ad-badge</code></li>
+            <li><code>doubleclick.net##.ad-label</code></li>
+            <li><code>doubleclick.net##.ads</code></li>
+            <li><code>googlesyndication.com##.ads</code></li>
+            <li><code>google-analytics.com##.ga-tracking</code></li>
+            <li><code>googletagmanager.com##.gtm-container</code></li>
           </ul>
         </section>
         <section class="rule-group">
-          <h3>Third-party only (reduces false positives)</h3>
+          <h3>Video player ad overlay patterns for streaming ||</h3>
           <ul class="rule-list">
-            <li><code>||doubleclick.net/pagead/*$third-party</code></li>
-            <li><code>||google-analytics.com/*$third-party</code></li>
-            <li><code>||googletagmanager.com/*$third-party</code></li>
+            <li><code>##.ad-badge</code></li>
+            <li><code>##.ad-label</code></li>
+            <li><code>##.ads</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Expanded cosmetic patterns for streaming sites ||</h3>
+          <ul class="rule-list">
+            <li><code>##[aria-label=&quot;Advertisement&quot;]</code></li>
+            <li><code>##[data-ad-client]</code></li>
+            <li><code>##[data-ad-slot]</code></li>
+            <li><code>##[data-ad-unit]</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Fallback: block common streaming ad servers ||</h3>
+          <ul class="rule-list">
+            <li><code>||-safe.tiqcdn.com$</code></li>
+            <li><code>||-e-100-metrics.adscape.com$</code></li>
+            <li><code>||-top-findly.com$</code></li>
+            <li><code>||-doubleverify.com$</code></li>
+          </ul>
+        </section>
+        <section class="rule-group">
+          <h3>Block third-party ads only (no main_frame) ||</h3>
+          <ul class="rule-list">
+            <li><code>||doubleclick.net/pagead$ third-party</code></li>
+            <li><code>||googlesyndication.com$ third-party</code></li>
+            <li><code>||googleads.g.doubleclick.net$ third-party</code></li>
           </ul>
         </section>
         </div>

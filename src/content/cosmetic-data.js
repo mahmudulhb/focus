@@ -10,22 +10,26 @@ globalThis.FOCUS_COSMETIC = {
     "google-analytics.com": [
       ".ga-tracking"
     ],
-    "googleadservices.com": [
-      ".ad-badge"
+    "googlesyndication.com": [
+      ".ads"
     ],
     "googletagmanager.com": [
       ".gtm-container"
-    ],
-    "pagead2.googlesyndication.com": [
-      ".ad-unit"
     ]
   },
   "generic": [
     ".ad-badge",
     ".ad-label",
     ".ads",
-    "[id^=\"div-gpt-ad\"]",
-    "[id^=\"google_ads\"]"
+    ".advertisement",
+    ".midroll",
+    ".postroll",
+    ".preroll",
+    ".video-ads",
+    "[aria-label=\"Advertisement\"]",
+    "[data-ad-client]",
+    "[data-ad-slot]",
+    "[data-ad-unit]"
   ],
   "exceptions": {}
 };
