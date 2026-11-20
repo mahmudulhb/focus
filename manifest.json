@@ -1,0 +1,89 @@
+{
+  "manifest_version": 3,
+  "name": "FOCUS",
+  "short_name": "FOCUS",
+  "version": "0.4.0",
+  "description": "Declarative ad and tracker filtering plus a reels blocker for Instagram, Facebook, YouTube Shorts, TikTok and Snapchat.",
+  "minimum_chrome_version": "105",
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "32": "public/icons/icon-32.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "FOCUS",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "public/icons/icon-16.png",
+      "32": "public/icons/icon-32.png",
+      "48": "public/icons/icon-48.png"
+    }
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "storage",
+    "declarativeNetRequest",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ads",
+        "enabled": true,
+        "path": "rules/ads.json"
+      },
+      {
+        "id": "trackers",
+        "enabled": true,
+        "path": "rules/trackers.json"
+      },
+      {
+        "id": "gambling",
+        "enabled": true,
+        "path": "rules/gambling.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/shared/config.js",
+        "src/shared/settings.js",
+        "src/content/cosmetic-data.js",
+        "src/content/cosmetic.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "*://*.instagram.com/*",
+        "*://*.facebook.com/*",
+        "*://*.youtube.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.snapchat.com/*"
+      ],
+      "js": [
+        "src/shared/config.js",
+        "src/shared/settings.js",
+        "src/shared/platforms.js",
+        "src/content/reels.js"
+      ],
+      "css": [
+        "src/content/reels.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

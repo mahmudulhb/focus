@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS Android privacy policy</title>
+    <meta
+      name="description"
+      content="Privacy policy for the FOCUS Android app: no account, no server, no internet permission. Blocklist, settings and stats stay in the app's private storage."
+    />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="icon" href="../public/icons/icon-48.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span>FOCUS</span>
+        </a>
+        <nav class="top-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="extension.html">Extension</a>
+          <a href="android.html">Android</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
+          <a href="privacy.html" aria-current="true">Privacy</a>
+        </nav>
+      </header>
+
+      <main id="main" class="doc">
+        <p class="eyebrow"><a href="privacy.html">Privacy</a> → Android app</p>
+        <h1>Privacy policy — Android app</h1>
+        <p class="meta">
+          App: <code>com.focus.android</code> version 1.0.0 · Last updated 20 November 2026
+        </p>
+
+        <nav class="toc" aria-label="Sections">
+          <a href="#short">Short version</a>
+          <a href="#stored">What is stored</a>
+          <a href="#usage">Usage access</a>
+          <a href="#overlay">Overlay</a>
+          <a href="#background">Background</a>
+          <a href="#never">What it never does</a>
+          <a href="#control">Your control</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <h2 id="short">The short version</h2>
+        <p>
+          FOCUS is a focus timer and app blocker for Android. It has no account, no server, and no
+          internet permission. Nothing you do in FOCUS is sent anywhere, because the app cannot
+          send anything.
+        </p>
+
+        <h2 id="stored">What FOCUS stores</h2>
+        <p>On your phone, in the app’s private storage:</p>
+        <ul>
+          <li>your blocklist — the package names of the apps you chose to block;</li>
+          <li>your settings: session length, Reels Guard on or off, five-minute passes on or off;</li>
+          <li>
+            today’s focused time and interruption count, your last completed day, and your current
+            streak;
+          </li>
+          <li>whether you have finished onboarding.</li>
+        </ul>
+        <p>
+          This is written with AndroidX DataStore and is readable only by FOCUS. It is not backed
+          up: the app sets <code>android:allowBackup="false"</code>, so it is not copied to Google
+          Drive and does not follow you to a new phone.
+        </p>
+
+        <h2 id="usage">Usage access</h2>
+        <p>
+          FOCUS asks for <strong>Usage access</strong> so it can tell which app is in the foreground.
+          It reads only recent activity-resumed events, in a rolling window of a few seconds, and
+          compares the package name against your blocklist. Usage events are not written to disk,
+          not aggregated into history, and not shared.
+        </p>
+        <p>
+          Without Usage access, FOCUS cannot detect a blocked app, and blocking is off. The app says
+          so instead of pretending to work.
+        </p>
+
+        <h2 id="overlay">Display over other apps</h2>
+        <p>
+          FOCUS asks for <strong>Display over other apps</strong> so it can draw its pause screen on
+          top of an app you chose to block. The overlay shows only the blocked app’s name, the
+          session countdown and the two buttons. It is not used to read, capture or record anything
+          on screen, and it never appears over an app that is not on your blocklist.
+        </p>
+
+        <h2 id="background">Notifications and running in the background</h2>
+        <p>
+          FOCUS runs a foreground service with a persistent notification while a session or Reels
+          Guard is active. Android shows that notification; it contains the session status and an
+          “End session” action. FOCUS requests the notification permission on Android 13 and newer
+          so that notification can be displayed.
+        </p>
+        <p>
+          FOCUS asks to be exempt from battery optimization only through the standard Android
+          settings screen. That keeps the monitor alive while the screen is off. After a reboot,
+          FOCUS restarts its monitor if a session or Reels Guard was active when the phone shut
+          down.
+        </p>
+
+        <h2 id="never">What FOCUS never does</h2>
+        <ul>
+          <li>No internet permission is declared, so FOCUS cannot transmit data.</li>
+          <li>No analytics, crash reporting, advertising or tracking SDKs are included.</li>
+          <li>No account, email address, phone number or identifier is collected.</li>
+          <li>
+            No accessibility service is used, so FOCUS cannot read screen content or simulate taps.
+          </li>
+          <li>No VPN is used, so FOCUS cannot see your traffic.</li>
+          <li>
+            FOCUS does not request <code>QUERY_ALL_PACKAGES</code>; it lists launchable apps through
+            the standard launcher intent query.
+          </li>
+          <li>No data is sold, rented or shared with third parties.</li>
+        </ul>
+
+        <h2 id="control">Your control and deletion</h2>
+        <ul>
+          <li>Remove an app from the blocklist at any time.</li>
+          <li>Turn Reels Guard off, or stop the monitor from its notification.</li>
+          <li>
+            Uninstalling FOCUS deletes all of its data from your phone. There is no copy elsewhere
+            to delete.
+          </li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>
+          FOCUS is not directed at children and collects no personal data from anyone, of any age.
+        </p>
+
+        <h2>Other FOCUS products</h2>
+        <p>
+          This policy covers the Android app only. The browser extension has
+          <a href="privacy.html">its own policy</a>.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          If a future version changes how data is handled, this page and the Play Store data safety
+          section will be updated in the same release, before that version ships.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          <!-- Replace with the support address you enter in Play Console. -->
+          Questions about this policy: <a href="mailto:support@example.com">support@example.com</a>.
+        </p>
+      </main>
+
+      <footer>
+        <span>FOCUS · v1.0.0 Android</span>
+        <span><a href="index.html">Home</a> · <a href="privacy.html">Extension privacy</a></span>
+      </footer>
+    </div>
+  </body>
+</html>

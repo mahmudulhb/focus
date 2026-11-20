@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS settings</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span class="wordmark">FOCUS</span>
+        </div>
+        <span class="version" id="version"></span>
+      </header>
+
+      <section class="hero">
+        <h1>Focus, on your terms.</h1>
+        <p>
+          One local extension: declarative network filtering for ads and trackers, plus a
+          deliberate blocker for short-form reels. No account, no cloud, no analytics.
+        </p>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <div>
+            <h2>Protection</h2>
+            <p class="hint">Master switch for all network filtering and cosmetic hiding.</p>
+          </div>
+          <label class="switch">
+            <input id="enabled" type="checkbox" role="switch" aria-label="Protection" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <div class="modes" id="modes" role="radiogroup" aria-label="Filtering mode"></div>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <div>
+            <h2>Betting sites</h2>
+            <p class="hint">
+              Blocks a curated list of sportsbooks, casinos and poker rooms as whole sites —
+              address bar, bookmark, search result or link. The page is replaced by the
+              browser's blocked-page notice. Filtering of everything else is unaffected.
+            </p>
+          </div>
+          <label class="switch">
+            <input id="gambling" type="checkbox" role="switch" aria-label="Betting sites" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <p class="hint">
+          Need one back? Add its hostname to <strong>Allowed sites</strong> below; the
+          allowlist outranks the betting block.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <div>
+            <h2>Reels blocker</h2>
+            <p class="hint">
+              Hides reels entry points and replaces a reel feed with a pause screen. A
+              five-minute pass is always available.
+            </p>
+          </div>
+          <label class="switch">
+            <input id="reels-enabled" type="checkbox" role="switch" aria-label="Reels blocker" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <p class="hint consent" id="reels-consent" hidden>
+          Reels blocking is off until you approve it. Ads and trackers are filtered either way.
+        </p>
+        <div class="actions" id="reels-consent-actions" hidden>
+          <button type="button" class="btn primary" id="reels-permission">
+            Review permission
+          </button>
+        </div>
+        <div class="chips" id="platforms"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Allowed sites</h2>
+        <p class="hint">
+          One host per line. Subdomains are included. Allowed sites are exempt from both
+          network filtering and the reels blocker.
+        </p>
+        <textarea
+          id="allowlist"
+          rows="6"
+          spellcheck="false"
+          autocomplete="off"
+          placeholder="example.com"
+          aria-label="Allowed sites"
+        ></textarea>
+        <div class="actions">
+          <button type="button" class="btn primary" id="save-allowlist">Save allowed sites</button>
+          <span class="status" id="allowlist-status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Today</h2>
+        <div class="today">
+          <div class="stat">
+            <strong id="today-count">0</strong>
+            <span>loops interrupted</span>
+          </div>
+          <div class="stat">
+            <strong id="today-minutes">0</strong>
+            <span>minutes reclaimed <em>(estimated)</em></span>
+          </div>
+        </div>
+        <p class="hint">
+          The estimate assumes two minutes per interrupted reel session. It is a rough
+          cue, not a measurement of your behaviour.
+        </p>
+        <div class="actions">
+          <button type="button" class="btn ghost" id="reset-stats">Reset today's count</button>
+        </div>
+      </section>
+
+      <section class="panel build">
+        <h2>Build</h2>
+        <dl>
+          <dt>Version</dt>
+          <dd id="build-version">—</dd>
+          <dt>Network rules</dt>
+          <dd id="build-rules">—</dd>
+          <dt>Cosmetic selectors</dt>
+          <dd id="build-cosmetic">—</dd>
+          <dt>Generated</dt>
+          <dd id="build-date">—</dd>
+        </dl>
+        <p class="hint">
+          The bundled list is a small starter set, not a full EasyList conversion. It is
+          compiled from <code>src/filters/</code> at build time; anything the compiler cannot
+          represent safely is skipped instead of being approximated.
+        </p>
+      </section>
+    </div>
+
+    <script src="../shared/config.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/build-info.js"></script>
+    <script src="../shared/platforms.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

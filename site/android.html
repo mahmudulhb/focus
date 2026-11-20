@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS for Android — focus sessions that get in the way</title>
+    <meta
+      name="description"
+      content="FOCUS for Android: timed focus sessions that cover a distracting app with a pause screen, Reels Guard for the rest of the day, and no internet permission at all."
+    />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="icon" href="../public/icons/icon-48.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span>FOCUS</span>
+        </a>
+        <nav class="top-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="extension.html">Extension</a>
+          <a href="android.html" aria-current="page">Android</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <p class="eyebrow">Android app · v1.0.0 · in preparation</p>
+        <h1>A pause screen for your phone.</h1>
+        <p class="lede">
+          Pick the apps that pull you in, start a session, and FOCUS covers them for the length you
+          chose. Between sessions, Reels Guard keeps the short-form apps closed.
+        </p>
+
+        <h2>What it does</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">Sessions</span>
+            <h3>15 to 90 minutes</h3>
+            <p>
+              Start a focus session and opening a blocked app shows a full-screen pause screen with
+              the time left, a “Back to focus” button, and an optional five-minute pass.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">All day</span>
+            <h3>Reels Guard</h3>
+            <p>
+              Keep the same app list blocked outside sessions. One switch, no schedule to maintain,
+              and it survives a reboot if it was on when the phone shut down.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Local</span>
+            <h3>Today and streak</h3>
+            <p>
+              Focused time, interruptions and a daily streak, stored on the phone. Reset today’s
+              counters any time; the blocklist and streak stay.
+            </p>
+          </article>
+        </div>
+
+        <h2>Why it blocks the whole app</h2>
+        <div class="panel">
+          <p>
+            Android does not let one app read or filter another app’s screens, and there is no
+            public API for reaching into Instagram’s or YouTube’s Reels tab. So FOCUS does what is
+            actually possible: it covers the entire app you chose. It is honest about the trade —
+            the whole app goes quiet, not just the feed.
+          </p>
+          <p>
+            It also cannot stop you from force-stopping it or uninstalling it. That is deliberate:
+            an escape hatch you control beats software that fights you.
+          </p>
+        </div>
+
+        <h2>Permissions, and exactly what each is for</h2>
+        <div class="panel">
+          <dl class="kv">
+            <dt>Usage access</dt>
+            <dd>
+              The only Android API that reveals which app is in front. FOCUS reads recent
+              activity-resumed events in a rolling window of a few seconds and compares the package
+              name with your blocklist. Events are never stored.
+            </dd>
+            <dt>Display over other apps</dt>
+            <dd>
+              Draws the pause screen over the app you chose to block. It never covers an app that is
+              not on your list, and it does not read the screen.
+            </dd>
+            <dt>Notifications</dt>
+            <dd>The single ongoing notification Android requires for the background monitor.</dd>
+            <dt>Battery exception (optional)</dt>
+            <dd>Keeps blocking alive with the screen off on aggressive battery managers.</dd>
+          </dl>
+          <p class="fineprint">
+            No accessibility service, no VPN, no <code>QUERY_ALL_PACKAGES</code>, and no
+            <code>INTERNET</code> permission — the app cannot send data anywhere.
+          </p>
+        </div>
+
+        <h2>Technical</h2>
+        <div class="panel">
+          <dl class="kv">
+            <dt>Package</dt>
+            <dd><code>com.focus.android</code></dd>
+            <dt>Version</dt>
+            <dd>1.0.0 (versionCode 1)</dd>
+            <dt>Android</dt>
+            <dd>8.0 and newer (minSdk 26), targeting API 36</dd>
+            <dt>Storage</dt>
+            <dd>Jetpack DataStore in the app’s private storage; no backup, no cloud</dd>
+            <dt>Stack</dt>
+            <dd>Kotlin, Jetpack Compose, Material 3, a special-use foreground service</dd>
+          </dl>
+        </div>
+
+        <h2>Availability</h2>
+        <div class="panel">
+          <span class="pill">Google Play · in preparation</span>
+          <p>
+            The app is built and unit-tested, but it has not been published to Google Play and there
+            is no public download yet. This page will link to the listing when it is live.
+          </p>
+        </div>
+
+        <p class="legal-note">
+          <a href="privacy-android.html">Read the app privacy policy</a>. Short version: everything
+          stays on the phone, and the app has no network permission.
+        </p>
+      </main>
+
+      <footer>
+        <span>FOCUS · v1.0.0 Android</span>
+        <span>
+          <a href="privacy-android.html">App privacy</a> ·
+          <!-- Replace with the support address you list on the store page. -->
+          <a href="mailto:support@example.com">Contact</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

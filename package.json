@@ -1,0 +1,15 @@
+{
+  "name": "focus",
+  "version": "0.4.0",
+  "private": true,
+  "description": "FOCUS \u2014 a declarative content blocker and reels blocker in one MV3 extension.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "site:filters": "node scripts/build-filters-page.mjs",
+    "test": "node --test",
+    "verify": "npm run build && npm test",
+    "package": "node scripts/build.mjs && node scripts/package.mjs"
+  }
+}

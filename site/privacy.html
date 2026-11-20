@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS privacy policy</title>
+    <meta
+      name="description"
+      content="Privacy policy for the FOCUS browser extension: no account, no telemetry, no server. Settings and counters stay in your browser profile."
+    />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="icon" href="../public/icons/icon-48.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span>FOCUS</span>
+        </a>
+        <nav class="top-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="extension.html">Extension</a>
+          <a href="android.html">Android</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
+          <a href="privacy.html" aria-current="page">Privacy</a>
+        </nav>
+      </header>
+
+      <main id="main" class="doc">
+        <p class="eyebrow">Privacy → Browser extension</p>
+        <h1>Privacy policy — browser extension</h1>
+        <p class="meta">
+          Applies to the FOCUS browser extension, version 0.4.0 · Last updated 20 November 2026
+        </p>
+
+        <nav class="toc" aria-label="Sections">
+          <a href="#short">Short version</a>
+          <a href="#stored">What is stored</a>
+          <a href="#processed">What is processed</a>
+          <a href="#permissions">Permissions</a>
+          <a href="#consent">Reels consent</a>
+          <a href="#never">What it never does</a>
+          <a href="#control">Your control</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <h2 id="short">The short version</h2>
+        <p>
+          FOCUS has no account, no server and no analytics. Everything it knows is stored in your
+          own browser profile and is never transmitted anywhere. The extension makes no network
+          requests of its own.
+        </p>
+
+        <h2 id="stored">What FOCUS stores</h2>
+        <p>Using <code>chrome.storage.local</code>, in your browser profile only:</p>
+        <ul>
+          <li>the filtering mode you picked (Basic, Optimal or Complete);</li>
+          <li>
+            the reels switches per platform, and whether you approved the reels blocker at all;
+          </li>
+          <li>the betting-site switch;</li>
+          <li>the list of sites you paused;</li>
+          <li>
+            a daily count of interrupted reel sessions, kept for 60 days and then discarded.
+          </li>
+        </ul>
+        <p>
+          This is not <code>chrome.storage.sync</code>: it is not copied to your Google account, and
+          it is not shared with the developer or anyone else.
+        </p>
+
+        <h2 id="processed">What FOCUS processes while you browse</h2>
+        <ul>
+          <li>
+            <strong>Request URLs</strong>, by the browser's declarative rules engine, to decide
+            whether a request matches the packaged ad, tracker or betting rules. FOCUS does not
+            read request or response bodies, headers or cookies, and keeps no log of requests.
+          </li>
+          <li>
+            <strong>The hostname of the active tab</strong>, when you open the popup, so it can show
+            whether FOCUS is active or paused on that site.
+          </li>
+          <li>
+            <strong>The URL path of the current page</strong>, on the five reels platforms, to notice
+            a reel route. The path is compared in memory; it is not written to storage.
+          </li>
+        </ul>
+
+        <h2 id="permissions">Permissions, and why each one exists</h2>
+        <ul>
+          <li>
+            <strong>storage</strong> — saves the settings listed above in your browser profile.
+          </li>
+          <li>
+            <strong>declarativeNetRequest</strong> — applies the packaged filter rules. Your browser
+            enforces them; the extension never inspects traffic itself.
+          </li>
+          <li>
+            <strong>tabs</strong> — reads the active tab's hostname for the popup's site control, and
+            opens the extension's own permission page after install.
+          </li>
+          <li>
+            <strong>Content scripts</strong> — a stylesheet on any site to hide ad containers in
+            Complete mode, and the reels blocker on instagram.com, facebook.com, youtube.com,
+            tiktok.com and snapchat.com only. No <code>host_permissions</code> are requested.
+          </li>
+        </ul>
+        <p>
+          FOCUS does not request <code>webRequest</code>, <code>cookies</code>,
+          <code>history</code>, <code>scripting</code>, <code>downloads</code>,
+          <code>clipboard</code> or <code>identity</code>.
+        </p>
+
+        <h2 id="consent">The reels blocker is opt-in</h2>
+        <p>
+          The reels blocker changes what a page shows, so it does nothing until you approve it on
+          the permission screen that opens after install. That screen lists the five sites and what
+          happens on each. Consent is never inferred from an older setting, so an extension update
+          cannot switch the blocker back on for someone who never approved it. Turning it off in
+          the popup or settings withdraws it immediately.
+        </p>
+
+        <h2 id="never">What FOCUS never does</h2>
+        <ul>
+          <li>It does not collect or transmit personal data — there is nowhere to transmit it.</li>
+          <li>It does not use remote code. All JavaScript ships in the package.</li>
+          <li>It does not read page content, form fields, messages or cookies.</li>
+          <li>
+            It does not collect identifiers, location, health, financial or authentication
+            information.
+          </li>
+          <li>It does not sell or transfer data to third parties.</li>
+          <li>It does not use data to determine creditworthiness or for lending.</li>
+          <li>It does not inject advertising, and the extension itself contains no ads.</li>
+        </ul>
+
+        <h2 id="control">Your control and deletion</h2>
+        <ul>
+          <li>Pause any site from the popup; the allowlist always outranks the filters.</li>
+          <li>Switch off protection entirely with the master switch.</li>
+          <li>
+            Remove the extension to delete everything it stored. There is no copy elsewhere to
+            delete, because none was ever made.
+          </li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>
+          FOCUS is not directed at children and collects no personal data from anyone, of any age.
+        </p>
+
+        <h2>Other FOCUS products</h2>
+        <p>
+          This policy covers the browser extension. The FOCUS app for Android is a separate product
+          with <a href="privacy-android.html">its own policy</a> and its own on-device storage.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          If a future version starts collecting anything, this page and the Chrome Web Store privacy
+          disclosure will be updated in the same release, before that version ships. The effective
+          date at the top always reflects the published version.
+        </p>
+
+        <h2 id="contact">Contact</h2>
+        <p>
+          <!-- Replace with the support address you list on the store page. -->
+          Questions about this policy: <a href="mailto:support@example.com">support@example.com</a>.
+        </p>
+      </main>
+
+      <footer>
+        <span>FOCUS · version 0.4.0</span>
+        <span>
+          <a href="index.html">Home</a> · <a href="privacy-android.html">App privacy</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

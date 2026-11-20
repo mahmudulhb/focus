@@ -1,0 +1,61 @@
+/*
+ * Reels entry-point hiding.
+ *
+ * `data-focus-site` is only present while the blocker is active for this site,
+ * and `data-focus-bypass` is only present during a deliberate five-minute
+ * pass. Selectors are intentionally narrow; the in-page interstitial catches
+ * the feed itself even when a site renames a wrapper.
+ */
+
+html[data-focus-site="instagram"]:not([data-focus-bypass]) a[href="/reels/"],
+html[data-focus-site="instagram"]:not([data-focus-bypass]) a[href^="/reels/?"],
+html[data-focus-site="instagram"]:not([data-focus-bypass]) a[href^="/reel/"] {
+  display: none !important;
+}
+
+html[data-focus-site="instagram"]:not([data-focus-bypass]) article:has(a[href^="/reel/"]) {
+  display: none !important;
+}
+
+html[data-focus-site="facebook"]:not([data-focus-bypass]) div[role="navigation"] a[href*="/reel/"],
+html[data-focus-site="facebook"]:not([data-focus-bypass]) div[role="navigation"] a[href*="/reels/"],
+html[data-focus-site="facebook"]:not([data-focus-bypass]) a[aria-label="Reels"],
+html[data-focus-site="facebook"]:not([data-focus-bypass]) div[role="article"]:has(a[href*="/reel/"]) {
+  display: none !important;
+}
+
+html[data-focus-site="youtube"]:not([data-focus-bypass]) ytd-reel-shelf-renderer,
+html[data-focus-site="youtube"]:not([data-focus-bypass]) ytd-rich-shelf-renderer[is-shorts],
+html[data-focus-site="youtube"]:not([data-focus-bypass]) ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html[data-focus-site="youtube"]:not([data-focus-bypass]) ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+html[data-focus-site="youtube"]:not([data-focus-bypass]) ytd-video-renderer:has(a[href^="/shorts/"]),
+html[data-focus-site="youtube"]:not([data-focus-bypass]) a[href^="/shorts/"] {
+  display: none !important;
+}
+
+html[data-focus-site="tiktok"]:not([data-focus-bypass]) [data-e2e="nav-for-you"],
+html[data-focus-site="tiktok"]:not([data-focus-bypass]) [data-e2e="nav-explore"],
+html[data-focus-site="tiktok"]:not([data-focus-bypass]) a[href="/foryou"] {
+  display: none !important;
+}
+
+html[data-focus-site="snapchat"]:not([data-focus-bypass]) a[href="/spotlight"],
+html[data-focus-site="snapchat"]:not([data-focus-bypass]) a[href^="/spotlight?"] {
+  display: none !important;
+}
+
+/* The interstitial host, positioned here so no inline style is needed. */
+#focus-reels-blocker {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+}
+
+/*
+ * While a blocked reel route is active, hide video until the interstitial has
+ * mounted. The interstitial itself lives in a shadow root, so this cannot
+ * affect it.
+ */
+html[data-focus-reel-route]:not([data-focus-bypass]) video {
+  visibility: hidden !important;
+}

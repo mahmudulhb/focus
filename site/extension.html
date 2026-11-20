@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS for the browser — extension</title>
+    <meta
+      name="description"
+      content="FOCUS for Chrome and other Chromium browsers: curated ad and tracker rules, opt-in reels blocking for five platforms, and a switchable betting-site blocklist."
+    />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="icon" href="../public/icons/icon-48.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span>FOCUS</span>
+        </a>
+        <nav class="top-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="extension.html" aria-current="page">Extension</a>
+          <a href="android.html">Android</a>
+          <a href="faq.html">FAQ</a>
+          <a href="filters.html">Filters</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <p class="eyebrow">Browser extension · v0.4.0</p>
+        <h1>Quiet over the loud parts.</h1>
+        <p class="lede">
+          One Manifest V3 extension for Chrome, Edge, Brave and other Chromium browsers. Filter
+          lists are compiled at build time into declarative rules; the browser enforces them, not a
+          script watching your traffic.
+        </p>
+
+        <h2>What it blocks</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="tag">Network</span>
+            <h3>Ads and trackers</h3>
+            <p>
+              135 ad rules and 62 tracker rules covering the major exchanges, analytics SDKs and
+              conversion pixels, plus generic ad-slot hiding in Complete mode.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Sponsored</span>
+            <h3>Feed ads</h3>
+            <p>
+              47 site-specific selectors for sponsored posts and ad slots on YouTube, Facebook,
+              Instagram, X, Reddit, LinkedIn, Twitch, Spotify and Amazon.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Sites</span>
+            <h3>Betting</h3>
+            <p>
+              63 sportsbooks, casinos and poker rooms blocked as whole sites. Its own switch, and
+              your allowlist always outranks it.
+            </p>
+          </article>
+        </div>
+
+        <p>
+          <a href="filters.html">See the full rule list</a> — every domain and selector, generated
+          from the files the build compiles.
+        </p>
+
+        <h2>Reels, with permission first</h2>
+        <div class="panel">
+          <p>
+            The reels blocker covers Instagram Reels, Facebook Reels, YouTube Shorts, TikTok’s For
+            You feed and Snapchat Spotlight. Entry points disappear before the first paint; opening
+            a reel route shows a pause screen with a five-minute pass.
+          </p>
+          <p>
+            It is the only feature that changes what a page shows, so it is opt-in. A permission
+            screen lists the five sites on install, nothing is hidden until you approve it, and an
+            update can never switch it back on behind your back. If a reel was opened from the feed,
+            “Back to feed” walks the site’s own history — no reload, no signed-out shell.
+          </p>
+        </div>
+
+        <h2>Filtering modes</h2>
+        <div class="panel">
+          <dl class="kv">
+            <dt>Basic</dt>
+            <dd>Ad rules only. No cosmetic hiding.</dd>
+            <dt>Optimal (default)</dt>
+            <dd>Ads, trackers, and per-site sponsored-slot hiding.</dd>
+            <dt>Complete</dt>
+            <dd>Also applies the generic ad-slot selectors on every site.</dd>
+            <dt>Betting sites</dt>
+            <dd>Separate switch, on by default, independent of the mode.</dd>
+          </dl>
+        </div>
+
+        <h2>Permissions</h2>
+        <div class="panel">
+          <dl class="kv">
+            <dt>storage</dt>
+            <dd>Your settings, allowlist and daily counter, in your browser profile.</dd>
+            <dt>declarativeNetRequest</dt>
+            <dd>Applies the packaged filter rules. No request bodies, headers or cookies are read.</dd>
+            <dt>tabs</dt>
+            <dd>
+              Reads the active tab’s hostname for the popup’s site control, and opens the
+              extension’s own permission page after install.
+            </dd>
+            <dt>Content scripts</dt>
+            <dd>
+              A stylesheet on any site for cosmetic hiding; the reels blocker only on the five
+              platforms. No <code>host_permissions</code> are requested.
+            </dd>
+          </dl>
+        </div>
+
+        <h2>What it cannot do</h2>
+        <div class="panel">
+          <ul class="plain">
+            <li>
+              Skip YouTube pre-roll or mid-roll ads. It hides in-feed and display slots; skipping
+              in-player video needs techniques this build does not ship.
+            </li>
+            <li>Block a site nobody added to the list. The lists are hand-curated and readable.</li>
+            <li>Stop you from switching it off. That is your call.</li>
+          </ul>
+        </div>
+
+        <h2>Install</h2>
+        <div class="panel">
+          <span class="pill">Chrome Web Store · in review</span>
+          <p>
+            The listing is not public yet. When it is approved, the install button will live on this
+            page and in the store. Until then the extension can be loaded unpacked from source by
+            developers — see the project README for the two commands.
+          </p>
+        </div>
+
+        <p class="legal-note">
+          <a href="privacy.html">Read the extension privacy policy</a>. Short version: no account,
+          no server, no analytics, and no data leaves your browser.
+        </p>
+      </main>
+
+      <footer>
+        <span>FOCUS · v0.4.0 extension</span>
+        <span>
+          <a href="privacy.html">Extension privacy</a> ·
+          <!-- Replace with the support address you list on the store page. -->
+          <a href="mailto:support@example.com">Contact</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

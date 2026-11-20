@@ -1,0 +1,83 @@
+! FOCUS betting-site rules
+! Compiled into the separate `gambling` ruleset, which is the only ruleset
+! allowed to block a top-level navigation. It is switched on and off with the
+! "Betting sites" setting; ads and trackers are filtered independently.
+!
+! `$all` is used on purpose: it blocks the site as a document (typing the
+! address, a bookmark, a search result, a link from anywhere) and also blocks
+! its scripts, iframes and widgets when they are embedded in another page.
+!
+! The user allowlist still wins: pausing a domain writes an allow rule at
+! priority 1000, above these blocks at 100. Add a site in Settings → Allowed
+! sites if you need it back.
+!
+! Scope: licensed and unlicensed sportsbooks, casinos and poker rooms. Nothing
+! here is a news, travel or hotel site. Domains are the consumer front doors;
+! affiliate and comparison sites are deliberately not included.
+
+! --- Sportsbooks ---------------------------------------------------------
+||1win.com^$all
+||1xbet.com^$all
+||22bet.com^$all
+||4rabet.com^$all
+||bet-at-home.com^$all
+||bet365.com^$all
+||betano.com^$all
+||betdaq.com^$all
+||betfair.com^$all
+||betfred.com^$all
+||betmgm.com^$all
+||betonline.ag^$all
+||betrivers.com^$all
+||betsson.com^$all
+||betus.com^$all
+||betvictor.com^$all
+||betvisa.com^$all
+||betway.com^$all
+||betwinner.com^$all
+||bovada.lv^$all
+||boylesports.com^$all
+||bwin.com^$all
+||coolbet.com^$all
+||coral.co.uk^$all
+||draftkings.com^$all
+||fanduel.com^$all
+||interwetten.com^$all
+||ladbrokes.com^$all
+||marathonbet.com^$all
+||matchbook.com^$all
+||melbet.com^$all
+||mostbet.com^$all
+||mybookie.ag^$all
+||netbet.com^$all
+||nordicbet.com^$all
+||novibet.com^$all
+||paddypower.com^$all
+||parimatch.com^$all
+||pointsbet.com^$all
+||smarkets.com^$all
+||skybet.com^$all
+||tipico.com^$all
+||unibet.com^$all
+||williamhill.com^$all
+||wynnbet.com^$all
+
+! --- Casinos, poker and crypto casinos -----------------------------------
+||888casino.com^$all
+||888sport.com^$all
+||bc.game^$all
+||bitstarz.com^$all
+||casino.com^$all
+||casumo.com^$all
+||duelbits.com^$all
+||grosvenorcasinos.com^$all
+||jackpotcity.com^$all
+||leovegas.com^$all
+||mrgreen.com^$all
+||partypoker.com^$all
+||pokerstars.com^$all
+||roobet.com^$all
+||rollbit.com^$all
+||royalpanda.com^$all
+||spinpalace.com^$all
+||stake.com^$all

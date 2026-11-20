@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS — frequently asked questions</title>
+    <meta
+      name="description"
+      content="Honest answers about what FOCUS blocks, what it cannot block, the reels permission screen, permissions on Android, and where your data goes (nowhere)."
+    />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="icon" href="../public/icons/icon-48.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span>FOCUS</span>
+        </a>
+        <nav class="top-links" aria-label="Site">
+          <a href="index.html">Home</a>
+          <a href="extension.html">Extension</a>
+          <a href="android.html">Android</a>
+          <a href="faq.html" aria-current="page">FAQ</a>
+          <a href="filters.html">Filters</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+      </header>
+
+      <main id="main">
+        <p class="eyebrow">Questions</p>
+        <h1>Asked, and answered plainly.</h1>
+        <p class="lede">
+          If an answer here sounds like a limitation, it is one. Every claim on this page describes
+          what the shipped code does, not what a marketing line would prefer.
+        </p>
+
+        <h2 id="blocking">Blocking</h2>
+        <div class="faq">
+          <details>
+            <summary>Does FOCUS block all ads?</summary>
+            <p>
+              No, and no filter list does. It blocks 135 ad rules and 62 tracker rules covering the
+              large exchanges, analytics SDKs and conversion pixels, plus sponsored slots hidden by
+              site-specific selectors on nine major platforms. Ads served from the same domain as the
+              page, or inside a video stream, get through.
+            </p>
+            <p>
+              It also hides feed ads but cannot skip YouTube pre-roll or mid-roll ads. Skipping
+              in-player video needs techniques this build does not ship, and FOCUS does not claim to.
+            </p>
+          </details>
+
+          <details>
+            <summary>A site broke while FOCUS was on. What now?</summary>
+            <p>
+              Pause the site from the popup. That adds it to your allowlist, which outranks every
+              filter with a much higher priority — so the site behaves as if FOCUS were not
+              installed. If the breakage came from cosmetic hiding rather than network rules, switch
+              the mode from Complete to Optimal and retest before blaming the whole extension.
+            </p>
+          </details>
+
+          <details>
+            <summary>Why didn’t it block a site I expected it to?</summary>
+            <p>
+              The betting list is hand-curated: 63 sportsbooks, casinos and poker rooms. It is not a
+              general-purpose blocklist and does not grow by itself. Similarly, a tracker absent from
+              the packaged list is not blocked. The filters are readable text inside the package —
+              no hidden remote updates.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does a bigger mode slow the browser down?</summary>
+            <p>
+              Network blocking is done by the browser’s declarative rules engine, not by a script
+              watching your traffic, so there is no per-request JavaScript cost. The only per-page
+              work is a stylesheet in Complete mode and the reels check on five domains. Beyond
+              that, FOCUS has no measurable overhead to report because it never runs on other pages.
+            </p>
+          </details>
+        </div>
+
+        <h2 id="reels">Reels and Shorts</h2>
+        <div class="faq">
+          <details>
+            <summary>Why is reels blocking off right after install?</summary>
+            <p>
+              Because it is opt-in. The reels blocker changes what a page shows, so nothing is hidden
+              until you approve it on the permission screen that opens after installation. That
+              screen lists the five supported sites and what happens on each. Decline and you keep
+              ad filtering only.
+            </p>
+          </details>
+
+          <details>
+            <summary>Which platforms are covered?</summary>
+            <ul>
+              <li>Instagram — Reels tab, reels routes, suggested reels in the feed</li>
+              <li>Facebook — Reels tab and reel watch routes</li>
+              <li>YouTube — Shorts shelf and the Shorts player</li>
+              <li>TikTok — the For You feed</li>
+              <li>Snapchat — Spotlight</li>
+            </ul>
+            <p>
+              Opening a reel route shows a pause screen with the time, a link back to the feed, and
+              an optional five-minute pass. The rest of each app keeps working.
+            </p>
+          </details>
+
+          <details>
+            <summary>Will it log me out of Instagram or YouTube?</summary>
+            <p>
+              No. An earlier build reloaded the site root to escape a reel, which could strand you on
+              a signed-out shell. “Back to feed” now uses the site’s own history, so you stay signed
+              in. As a second guard, FOCUS checks whether a page is a login or auth route — and
+              whether a password field is actually rendered — and never covers it.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I turn reels blocking off after approving it?</summary>
+            <p>
+              Yes, from the popup or the settings page, per platform or entirely. Consent is stored
+              separately from the switches, so it is never inferred: an extension update cannot
+              switch the blocker back on for someone who declined or withdrew.
+            </p>
+          </details>
+        </div>
+
+        <h2 id="privacy">Privacy and permissions</h2>
+        <div class="faq">
+          <details>
+            <summary>Does FOCUS send anything anywhere?</summary>
+            <p>
+              No. The extension has no server and makes no network requests of its own. Settings,
+              allowlist and the daily counter live in <code>chrome.storage.local</code> — your
+              browser profile, not your Google account. The Android app declares no
+              <code>INTERNET</code> permission at all, so it is technically incapable of sending
+              data.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can it read my passwords, messages or cookies?</summary>
+            <p>
+              No. It requests <code>storage</code>, <code>declarativeNetRequest</code> and
+              <code>tabs</code>, and no <code>webRequest</code>, <code>cookies</code>,
+              <code>history</code>, <code>scripting</code>, <code>downloads</code> or
+              <code>identity</code>. Request bodies, headers and cookies are never read. It does not
+              inspect page content or form fields.
+            </p>
+          </details>
+
+          <details>
+            <summary>Why does the Android app need Usage access?</summary>
+            <p>
+              It is the only Android API that reveals which app is in the foreground. FOCUS reads
+              recent activity-resumed events in a rolling window of a few seconds and compares the
+              package name with your blocklist. Those events are never written to disk. Without that
+              permission, detection cannot work, and the app says so instead of pretending.
+            </p>
+          </details>
+
+          <details>
+            <summary>Why does the Android app cover the whole app instead of just the feed?</summary>
+            <p>
+              Android gives no public API for one app to read or filter another app’s screens, and no
+              way to target a specific tab inside Instagram or YouTube. Covering the app you chose is
+              the honest version of what is possible. It also cannot stop you from force-stopping it
+              — that escape hatch is deliberate.
+            </p>
+          </details>
+        </div>
+
+        <h2 id="availability">Availability</h2>
+        <div class="faq">
+          <details>
+            <summary>Where can I install FOCUS?</summary>
+            <p>
+              Neither product is public yet. The extension is in review for the Chrome Web Store; the
+              Android app is built and tested but not published to Google Play. This site will link
+              to both listings the moment they are live, and it will not show an install button
+              before that is true.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does it work in Edge, Brave or Opera?</summary>
+            <p>
+              Any Chromium browser that supports Manifest V3 and the declarative rules API should
+              run it — Edge, Brave, Vivaldi, Opera. Firefox has a different extension platform and is
+              not supported by this build.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I use the extension and the Android app together?</summary>
+            <p>
+              Yes. They are separate products with separate settings and separate storage. Nothing is
+              synced between them, because neither has a server or a sync backend.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is it free?</summary>
+            <p>
+              Yes — free, with no account, no subscription and no ads inside either product. There is
+              nothing to upsell, so there is no reason to weaken a block behind a paywall.
+            </p>
+          </details>
+        </div>
+
+        <p class="legal-note">
+          Still unanswered? Read the
+          <a href="privacy.html">extension policy</a> and the
+          <a href="privacy-android.html">app policy</a>, or use the contact link below.
+        </p>
+      </main>
+
+      <footer>
+        <span>FOCUS · v0.4.0 extension · v1.0.0 app</span>
+        <span>
+          <a href="privacy.html">Extension privacy</a> ·
+          <a href="privacy-android.html">App privacy</a> ·
+          <!-- Replace with the support address you list on the store page. -->
+          <a href="mailto:support@example.com">Contact</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

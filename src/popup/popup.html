@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+          <circle
+            cx="12"
+            cy="12"
+            r="8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-dasharray="42 8"
+            transform="rotate(-45 12 12)"
+          />
+          <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+        </svg>
+        <span class="wordmark">FOCUS</span>
+      </div>
+      <label class="switch" title="Protection">
+        <input id="enabled" type="checkbox" role="switch" aria-label="Protection" />
+        <span class="track"></span>
+      </label>
+    </header>
+
+    <main>
+      <section class="hero" aria-live="polite">
+        <p class="hero-title" id="hero-title">Protection is on</p>
+        <p class="hero-sub" id="hero-sub">Checking settings…</p>
+      </section>
+
+      <section class="card" aria-label="Controls">
+        <div class="row">
+          <div class="row-text">
+            <p class="row-title">Reels blocker</p>
+            <p class="row-sub" id="reels-sub">Short-form feeds</p>
+          </div>
+          <label class="switch small">
+            <input id="reels" type="checkbox" role="switch" aria-label="Reels blocker" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <div class="row">
+          <div class="row-text">
+            <p class="row-title">Betting sites</p>
+            <p class="row-sub" id="gambling-sub">Blocked at the door</p>
+          </div>
+          <label class="switch small">
+            <input id="gambling" type="checkbox" role="switch" aria-label="Betting sites" />
+            <span class="track"></span>
+          </label>
+        </div>
+        <div class="row">
+          <div class="row-text">
+            <p class="row-title">This site</p>
+            <p class="row-sub" id="site-host">Checking page…</p>
+          </div>
+          <label class="switch small">
+            <input id="site" type="checkbox" role="switch" aria-label="Protection on this site" />
+            <span class="track"></span>
+          </label>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Today">
+        <div class="stat">
+          <strong id="today-count">0</strong>
+          <span>loops interrupted</span>
+        </div>
+        <div class="stat">
+          <strong id="today-minutes">0</strong>
+          <span>min reclaimed <em>(est.)</em></span>
+        </div>
+      </section>
+
+      <footer>
+        <button class="link" id="open-options" type="button">Settings</button>
+        <p id="filter-summary">Loading build…</p>
+      </footer>
+    </main>
+
+    <script src="../shared/config.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/build-info.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FOCUS — reels blocker permission</title>
+    <link rel="stylesheet" href="../ui/base.css" />
+    <link rel="stylesheet" href="welcome.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-dasharray="42 8"
+              transform="rotate(-45 12 12)"
+            />
+            <circle cx="12" cy="12" r="2.3" fill="#ff7a59" />
+          </svg>
+          <span class="wordmark">FOCUS</span>
+        </div>
+        <span class="version" id="version"></span>
+      </header>
+
+      <main class="panel">
+        <p class="eyebrow">Permission</p>
+        <h1 id="title">Reels blocker needs your approval.</h1>
+        <p class="lede" id="lede">
+          FOCUS can hide short-form entry points and replace a reel feed with a pause screen.
+          It only does that after you turn it on here.
+        </p>
+
+        <h2>What it will do on these sites</h2>
+        <ul class="list" id="platforms"></ul>
+
+        <h2>What it will not do</h2>
+        <ul class="list quiet">
+          <li>Read, capture or change the content of any page.</li>
+          <li>Touch your account, messages or cookies.</li>
+          <li>Send anything anywhere. No account, no server, no analytics.</li>
+          <li>Block sign-in, sign-up, password or account-recovery screens.</li>
+        </ul>
+
+        <p class="note">
+          Ad and tracker filtering is separate and already running. Reels blocking stays off,
+          including after an update, until you approve it — and you can switch it off again in
+          the popup or in Settings.
+        </p>
+
+        <div class="actions" id="actions">
+          <button type="button" class="btn primary" id="allow">Turn on reels blocker</button>
+          <button type="button" class="btn ghost" id="decline">Not now</button>
+        </div>
+
+        <div class="actions" id="done" hidden>
+          <button type="button" class="btn primary" id="close">Close this tab</button>
+          <button type="button" class="btn ghost" id="open-options">Open settings</button>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </main>
+
+      <p class="foot">
+        Stored locally in this browser. Nothing here is sent to a server.
+      </p>
+    </div>
+
+    <script src="../shared/config.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/platforms.js"></script>
+    <script src="../shared/build-info.js"></script>
+    <script src="welcome.js"></script>
+  </body>
+</html>
